@@ -5,4 +5,5 @@
 
 2. `cd rails-task`
 
-3. `docker-compose run web rails db:create && docker-compose up`
+3. `docker-compose run web rails db:create && docker-compose run web yarn install --check-files`
+4. `docker-compose up`
