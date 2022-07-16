@@ -1,0 +1,14 @@
+- if logged_in?
+  body.home
+    = render 'layouts/navbar'
+  .container
+    = render 'layouts/flash_messages'
+    = yield
+  #footer
+
+- else
+  body.toppage
+    = render 'layouts/navbar'
+  .container-fluid
+    = render 'layouts/flash_messages'
+    = yield
