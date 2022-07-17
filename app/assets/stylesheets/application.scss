@@ -20,23 +20,38 @@
   padding: 0;
 }
 
-.html {
+html {
   border: 0;
 }
 
-.html, body {
+html, body {
   background-color: #F4FAFF;
   height: 100%;
   font-family: 'NotoSans',sans-serif;
 }
 
-
-.body {
+body {
   display: block;
   border: 0;
+  padding-top: 50px;
 }
+
+.alert-notice {
+  padding: 10px;
+}
+
+  .alert {
+    display: inline-block;
+    background-color: #f2dede;
+    text-align: center;
+    color: #a94442;
+    border-color: #ebccd1;
+    width: 100%;
+    border-radius: 5px;
+  }
 
 footer {
   text-align: center;
   bottom: 10px;
+  margin-top: 20px;
 }
