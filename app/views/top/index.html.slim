@@ -1,87 +1,84 @@
 / ヘッダー
-.header
+nav.navbar-header
   h1 Chatty
 
 .main
-
-.logout-button
+  .logout-button
   / ログインユーザの場合
   / ログアウトリンクを設置、ログアウトユーザと同じviewを表示(render)
   = link_to 'ログアウト', destroy_user_session_path, method: :delete
+  
+  / ログインユーザの画像とつぶやくボタンを表示(asideにしとく)
+aside
+  .post-form
+    = link_to 'つぶやく', '#'
 
-/ ログインユーザの画像とつぶやくボタンを表示(asideにしとく)
-.post-form
-  = link_to 'つぶやく', '#'
-
-/ ツイートを表示する
-.posts-list
-ul
-  li ツイート1
-  li ツイート2
-  li ツイート3
-  li ツイート4
-  li ツイート5
-  li ツイート1
-  li ツイート2
-  li ツイート3
-  li ツイート4
-  li ツイート5
-  li ツイート1
-  li ツイート2
-  li ツイート3
-  li ツイート4
-  li ツイート5
-  li ツイート1
-  li ツイート2
-  li ツイート3
-  li ツイート4
-  li ツイート5
-  li ツイート1
-  li ツイート2
-  li ツイート3
-  li ツイート4
-  li ツイート5
-  li ツイート1
-  li ツイート2
-  li ツイート3
-  li ツイート4
-  li ツイート5
-  li ツイート1
-  li ツイート2
-  li ツイート3
-  li ツイート4
-  li ツイート5
-  li ツイート1
-  li ツイート2
-  li ツイート3
-  li ツイート4
-  li ツイート5
-  li ツイート1
-  li ツイート2
-  li ツイート3
-  li ツイート4
-  li ツイート5
-  li ツイート1
-  li ツイート2
-  li ツイート3
-  li ツイート4
-  li ツイート5
-  li ツイート1
-  li ツイート2
-  li ツイート3
-  li ツイート4
-  li ツイート5
-  li ツイート1
-  li ツイート2
-  li ツイート3
-  li ツイート4
-  li ツイート5
+  / ツイートを表示する
+  .posts-list
+    ul
+      li ツイート1
+      li ツイート2
+      li ツイート3
+      li ツイート4
+      li ツイート5
+      li ツイート1
+      li ツイート2
+      li ツイート3
+      li ツイート4
+      li ツイート5
+      li ツイート1
+      li ツイート2
+      li ツイート3
+      li ツイート4
+      li ツイート5
+      li ツイート1
+      li ツイート2
+      li ツイート3
+      li ツイート4
+      li ツイート5
+      li ツイート1
+      li ツイート2
+      li ツイート3
+      li ツイート4
+      li ツイート5
+      li ツイート1
+      li ツイート2
+      li ツイート3
+      li ツイート4
+      li ツイート5
+      li ツイート1
+      li ツイート2
+      li ツイート3
+      li ツイート4
+      li ツイート5
+      li ツイート1
+      li ツイート2
+      li ツイート3
+      li ツイート4
+      li ツイート5
+      li ツイート1
+      li ツイート2
+      li ツイート3
+      li ツイート4
+      li ツイート5
+      li ツイート1
+      li ツイート2
+      li ツイート3
+      li ツイート4
+      li ツイート5
+      li ツイート1
+      li ツイート2
+      li ツイート3
+      li ツイート4
+      li ツイート5
+      li ツイート1
+      li ツイート2
+      li ツイート3
+      li ツイート4
+      li ツイート5
 
 / ログインユーザでない場合
 / ログイン・新規登録ページへ案内
 .login_button
   = link_to 'ログイン', '#', class: 'login-link'
 
-/ フッター
-footer
-  small &copy; 2022 Yyy Engineering

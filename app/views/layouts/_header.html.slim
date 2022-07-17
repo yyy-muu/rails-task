@@ -1,14 +1,2 @@
-/ .header-title
-/   h1 Chatty
-
-
-/ = render
-
-
-/ .inner-container
-/   - if current_user
-/     = link_to 'ログアウト', destroy_user_session_path, method: :delete
-/     = link_to 'つぶやく'
-
-/   - else
-/     = link_to 'ログイン', new_user_session_path
+nav.navbar-header
+  h1 Chatty
