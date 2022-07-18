@@ -127,7 +127,7 @@ aside {
   justify-content: center;
   background-color: #3772ff;
   height: 40px;
-  width: 150px;
+  width: 170px;
   margin: auto;
   opacity: 0.9;
   border-radius: 30px;
@@ -147,9 +147,15 @@ aside {
 .logout-bar {
   width: 95%;
   margin: 0 auto;
-  padding-bottom: 25px;
+  padding-bottom: 10px;
+  text-align: right;
 }
 
 .logout-link {
   display: inline-block;
+  text-decoration: none;
+  color: #4c5c68;
+  border: 1px solid #4c5c68;
+  border-radius: 25px;
+  padding: 0 10px;
 }

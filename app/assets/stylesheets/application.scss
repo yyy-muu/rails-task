@@ -40,15 +40,25 @@ body {
   padding: 10px;
 }
 
-  .alert {
-    display: inline-block;
-    background-color: #f2dede;
-    text-align: center;
-    color: #a94442;
-    border-color: #ebccd1;
-    width: 100%;
-    border-radius: 5px;
-  }
+.alert {
+  display: inline-block;
+  background-color: #f2dede;
+  text-align: center;
+  color: #a94442;
+  border-color: #ebccd1;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.notice {
+  display: inline-block;
+  background-color: #c8f9d7;
+  text-align: center;
+  color: #338847;
+  border-color: #a9f6c1;
+  width: 100%;
+  border-radius: 5px; 
+}
 
 footer {
   text-align: center;
