@@ -40,10 +40,10 @@ main {
   background: #F4FAFF;
   border: 1px solid  #5DFDCB;
   padding: 2px;
-}
+
   ul {
-    list-style-type: none;
     padding: 0;
+    list-style-type: none;
   }
 
   li {
@@ -52,6 +52,9 @@ main {
     margin: 2px 0;
     border-radius: 3px;
   }
+}
+
+
 
 aside {
   flex: 1;
@@ -93,7 +96,6 @@ aside {
   text-align: center;
 }
 
-
 .post-panel {
   background-color: #25deef;
   text-align: center;
@@ -101,14 +103,13 @@ aside {
   margin: 5px 20px;
   opacity: 0.9;
   border-radius: 30px;
+  cursor: pointer;
 }
   :hover {
     opacity: 1;
   }
 
 .post-link {
-  display: inline-block;
-  text-decoration: none;
   color: #FFFFFF;
   background-color: none;
   padding: 3px;
@@ -123,26 +124,15 @@ aside {
   left: 0;
   right: 0;
   display: flex;
-  cursor: pointer;
-  justify-content: center;
-  background-color: #3772ff;
-  height: 40px;
-  width: 170px;
   margin: auto;
-  opacity: 0.9;
-  border-radius: 30px;
-}
-  :hover {
-    opacity: 1;
-  }
+ }
 
 .login-link {
   color: #FFFFFF;
   font-weight: bolder;
   display: block;
   justify-content: center;
-  text-decoration: none;
-  padding: 6px 40px;
+  padding: 8px 40px;
 }
 .logout-bar {
   width: 95%;
@@ -152,8 +142,6 @@ aside {
 }
 
 .logout-link {
-  display: inline-block;
-  text-decoration: none;
   color: #4c5c68;
   border: 1px solid #4c5c68;
   border-radius: 25px;

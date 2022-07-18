@@ -11,16 +11,8 @@ html
   
   body
     = render 'layouts/header'
-    .container
     = render 'layouts/alert_notice'
     = yield
     = render 'layouts/footer'
-    
-    / - if current_user
-      = render 'layouts/header'
-    / - else
-    /   = render 'layouts/header'
 
-
-    
 
