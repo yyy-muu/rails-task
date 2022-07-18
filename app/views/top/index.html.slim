@@ -80,12 +80,13 @@ nav.navbar-header
   / ログインユーザの画像とつぶやくボタンを表示(asideにしとく)
   - if user_signed_in?
     aside
-      .post-panel
-        icon ユーザアイコン表示予定
-        br
-        = current_user.name
-        br
-        .post-link-panel
+      .side-panel
+        .profile-panel
+          .user-icon
+            | (仮)
+          .user-name
+            = current_user.name
+        .post-panel
           = link_to 'つぶやく', '#', class: 'post-link'
 
   - else

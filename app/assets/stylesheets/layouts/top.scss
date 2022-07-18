@@ -60,15 +60,41 @@ aside {
   padding-left: 15px;
 }
 
-.post-panel {
+.side-panel {
   background-color: #FFFFFF;
   padding: 5%;
   height: auto;
   border: 1px solid #5DFDCB;
   border-radius: 10px;
+  width: auto;
 }
 
-.post-link-panel {
+.profile-panel {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-icon {
+  width: 75px;
+  height: 75px;
+  background-color: #F038FF;
+  border-radius: 50px;
+  text-align: center;
+  padding: 25px;
+  margin-right: 10px;
+}
+
+.user-name {
+  width: auto;
+  height: auto;
+  text-align: center;
+}
+
+
+.post-panel {
   background-color: #25deef;
   text-align: center;
   height: 30px;
