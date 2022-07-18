@@ -2,11 +2,11 @@
 nav.navbar-header
   h1 Chatty
 
-.logout-bar
-  / ログインユーザの場合
-  - if user_signed_in?
-  / ログアウトリンクを設置、遷移後にログアウトユーザと同じviewを表示(render)
-  = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'lougout-link'
+- if user_signed_in?
+  .logout-bar
+    / ログインユーザの場合
+    / ログアウトリンクを設置、遷移後にログアウトユーザと同じviewを表示(render)
+    = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'lougout-link'
 
 .main-wrapper
 
@@ -78,17 +78,19 @@ nav.navbar-header
         li ツイート5
 
   / ログインユーザの画像とつぶやくボタンを表示(asideにしとく)
-  aside
-    .post-panel
-      icon ユーザアイコン表示予定
-      br
-      username ユーザネームを表示
-      br
-      .post-link-panel
-        = link_to 'つぶやく', '#', class: 'post-link'
+  - if user_signed_in?
+    aside
+      .post-panel
+        icon ユーザアイコン表示予定
+        br
+        = current_user.name
+        br
+        .post-link-panel
+          = link_to 'つぶやく', '#', class: 'post-link'
 
-/ ログインユーザでない場合
-/ ログイン・新規登録ページへ案内
-.login-button
-  = link_to 'ログイン', '#', class: 'login-link'
+  - else
+    / ログインユーザでない場合
+    / ログイン・新規登録ページへ案内
+    .login-button
+      = link_to 'ログイン', new_user_session_path, class: 'login-link'
 
