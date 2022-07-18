@@ -24,7 +24,7 @@ h3 {
 .button {
   border: none;
   height: 40px;
-  width: 160px;
+  width: 170px;
   padding: 6px 10px;
   border-radius: 30px;
   font-weight: bold;
@@ -40,10 +40,11 @@ h3 {
   }
 
 .github-button {
+  display: inline-block;
   border: none;
   height: 40px;
-  width: 160px;
-  padding: 6px 10px;
+  width: 170px;
+  padding: 9px 10px;
   border-radius: 30px;
   font-weight: bold;
   background-color: rgb(27, 25, 25);
@@ -52,6 +53,7 @@ h3 {
   opacity: 0.9;
   margin: 5px;
   font-size: 15px;
+  text-decoration: none;
 }
   :hover {
     opacity: 1;
@@ -89,7 +91,7 @@ h3 {
   display: inline-block;
   border: none;
   height: 40px;
-  width: 160px;
+  width: 170px;
   padding: 10px 10px;
   border-radius: 30px;
   font-weight: bold;
