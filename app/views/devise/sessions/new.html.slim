@@ -1,0 +1,27 @@
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  h3 ログイン
+
+  .field
+    = f.label :email, class:'form-control'
+    br
+    = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form'
+
+  .field
+    = f.label :password, class:'form-control'
+    br
+    = f.password_field :password, autocomplete: "current-password", class: 'form'
+  
+  - if devise_mapping.rememberable?
+    .field
+      = f.check_box :remember_me, class: 'check-box'
+      = f.label :remember_me
+  
+  .actions
+    = f.submit "ログイン", class: 'button'
+    br
+    = link_to "Githubでサインイン", '#', class: 'github-button'
+    br
+    .sign-up
+      signup ▼まだ会員登録してない方はこちらから新規登録▼
+      br
+      = render "devise/shared/links"

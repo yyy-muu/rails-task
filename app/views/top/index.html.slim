@@ -1,0 +1,97 @@
+/ ヘッダー
+nav.navbar-header
+  h1 Chatty
+
+- if user_signed_in?
+  .logout-bar
+    / ログインユーザの場合
+    / ログアウトリンクを設置、遷移後にログアウトユーザと同じviewを表示(render)
+    = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'logout-link'
+
+.main-wrapper
+
+  .
+  / ツイートを表示する(今は仮でリスト表示)
+  main
+    .posts-list
+      ul
+        li 仮ツイート表示
+        li ツイート1
+        li ツイート2
+        li ツイート3
+        li ツイート4
+        li ツイート5
+        li ツイート1
+        li ツイート2
+        li ツイート3
+        li ツイート4
+        li ツイート5
+        li ツイート1
+        li ツイート2
+        li ツイート3
+        li ツイート4
+        li ツイート5
+        li ツイート1
+        li ツイート2
+        li ツイート3
+        li ツイート4
+        li ツイート5
+        li ツイート1
+        li ツイート2
+        li ツイート3
+        li ツイート4
+        li ツイート5
+        li ツイート1
+        li ツイート2
+        li ツイート3
+        li ツイート4
+        li ツイート5
+        li ツイート1
+        li ツイート2
+        li ツイート3
+        li ツイート4
+        li ツイート5
+        li ツイート1
+        li ツイート2
+        li ツイート3
+        li ツイート4
+        li ツイート5
+        li ツイート1
+        li ツイート2
+        li ツイート3
+        li ツイート4
+        li ツイート5
+        li ツイート1
+        li ツイート2
+        li ツイート3
+        li ツイート4
+        li ツイート5
+        li ツイート1
+        li ツイート2
+        li ツイート3
+        li ツイート4
+        li ツイート5
+        li ツイート1
+        li ツイート2
+        li ツイート3
+        li ツイート4
+        li ツイート5
+
+  / ログインユーザの画像とつぶやくボタンを表示(asideにしとく)
+  - if user_signed_in?
+    aside
+      .side-panel
+        .profile-panel
+          .user-icon
+            | (仮)
+          .user-name
+            = current_user.name
+        .post-panel
+          = link_to 'つぶやく', '#', class: 'post-link'
+
+  - else
+    / ログインユーザでない場合
+    / ログイン・新規登録ページへ案内
+    .login-button
+      = link_to 'ログイン', new_user_session_path, class: 'login-link'
+
