@@ -79,7 +79,7 @@
           .user-icon
             | (仮)
           .user-name
-            = current_user.name
+            = link_to current_user.name, user_path(current_user)
         .post-panel
           = link_to 'つぶやく', '#', class: 'post-link'
 
