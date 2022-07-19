@@ -1,0 +1,109 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$basic-button-color: #3772FF;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  border: 0;
+}
+
+html, body {
+  background-color: #F4FAFF;
+  height: 100%;
+  font-family: 'NotoSans',sans-serif;
+}
+
+body {
+  display: block;
+  border: 0;
+  padding-top: 50px;
+}
+
+.alert-notice {
+  padding: 10px;
+}
+
+.alert {
+  display: inline-block;
+  background-color: #f2dede;
+  text-align: center;
+  color: #a94442;
+  border-color: #ebccd1;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.notice {
+  display: inline-block;
+  background-color: #c8f9d7;
+  text-align: center;
+  color: #338847;
+  border-color: #a9f6c1;
+  width: 100%;
+  border-radius: 5px; 
+}
+
+.footer {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 100%;
+  padding-bottom: 5px;
+}
+
+@mixin basic-button-style {
+  font-weight: bold;
+  color: #FFFFFF;
+  opacity: 0.9;
+  font-size: 15px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.button, .github-button, .login-button, .to-signup-link {
+  @include basic-button-style;
+  height: 40px;
+  width: 170px;
+  border-radius: 30px;
+  justify-content: center;
+}
+
+
+.button, .github-button, .to-signup-link {
+  border: none;
+  margin: 5px;
+}
+
+.to-signup-link, .login-button, .button {
+  background-color: $basic-button-color;
+}
+
+.to-login-link, .to-signup-link, .github-button, label, em, .post-link, .logout-link {
+  display: inline-block;
+}
+
+.github-button, .github-button, .post-link, .login-link, .logout-link, .to-signup-link {
+  text-decoration: none;
+}
