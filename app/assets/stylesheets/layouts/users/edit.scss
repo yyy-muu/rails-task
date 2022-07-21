@@ -41,3 +41,16 @@
   font-size: 13px;
   color: #1B263B;
 }
+
+.back {
+  display: inline-block;
+  text-decoration: none;
+  color: #1B263B;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 5px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
