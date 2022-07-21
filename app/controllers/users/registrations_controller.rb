@@ -25,9 +25,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # DELETE /resource
-  # def destroy
-  #   super
-  # end
+  def destroy
+    # ユーザの論理削除(DBからユーザ情報は完全削除せず、アプリケーション上で存在しないユーザとする)
+    resource.soft_delete
+    # 1セッションの場合はtrueを返してログアウト、複数セッションの場合はfalseを返し、リソース名(current_user名)を引数にしてログアウト
+    Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
+    set_flash_message :notice, :destroyed
+    # 削除出来たら、サインアウト後のパスにリダイレクトする(helpers.rbでリダイレクト先を定義, デフォルトはroot)
+    respond_with_navigational(resource){ redirect_to after_sign_out_path_for(resource_name) }
+  end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
