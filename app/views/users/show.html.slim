@@ -1,4 +1,4 @@
-- if user_signed_in?
+- if current_user.id == @user.id
   .sub-bar
     / ログインユーザの場合
     / TO Pページ・ログアウト・退会リンクを設置
@@ -9,14 +9,13 @@
 
   .panel
     .edit-button
-      =link_to '編集', edit_user_registration_path, class: 'edit-link'
+      =link_to 'プロフィールを編集', edit_user_registration_path, class: 'edit-link'
     .nameicon-panel
       .user-icon2
         | (仮)
       .user-name2
-        a.current-user-name = current_user.name
+        a.current-user-name = @user.name
     .introduction-panel
       .introduction
-        / 160文字
-       p この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れて...
+        = @user.self_introduction
 
