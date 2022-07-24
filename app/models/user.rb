@@ -7,8 +7,6 @@ class User < ApplicationRecord
   # validates :profile_image
   validates :self_introduction, length: { maximum: 160 }
 
-
-  # 第2引数(*options)は廃止された
   def update_without_current_password(params)
     if params[:password].blank? && params[:password_confirmation].blank?
       params.delete(:password)
@@ -16,9 +14,9 @@ class User < ApplicationRecord
     end
 
     # params([:password])をviewのfieldから引数として受け取る
-    # 保存に失敗したら例外を返す
-    result = update!(params)
-    
+    # 保存に失敗した場合、registration_controllerのupdateメソッドでフラッシュメッセージを出す
+    result = update(params)
+
     # passwordとpassword_confirmationの値をnilにする
     clean_up_passwords
     result
