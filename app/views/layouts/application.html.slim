@@ -10,9 +10,11 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   
   body
-    = render 'layouts/header'
-    = render 'layouts/alert_notice'
-    = yield
-    = render 'layouts/footer'
+    .container
+      = render 'layouts/header'
+      .main
+        = render 'layouts/alert_notice'
+        = yield
+        = render 'layouts/footer'
 
 

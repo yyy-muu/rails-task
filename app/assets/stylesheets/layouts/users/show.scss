@@ -1,0 +1,116 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@mixin default-margin {
+  margin: 5%;
+}
+
+@mixin none-textdeco {
+  text-decoration: none;
+}
+
+.sub-bar {
+  width: 95%;
+  margin: 0 5%;
+  margin-bottom: 5px;
+  justify-content: flex-start;
+
+  a {
+    @include none-textdeco;
+    color: #1B263B;
+    display: inline-block;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin-top: 1px;
+    margin-right: 10px;
+    border: 1px solid #4c5c68;
+    border-radius: 25px;
+    padding: 0 8px;
+    font-size: 15px;
+    background-color: #FFFFFF;
+  }
+}
+
+.top-page {
+  font-weight: bold;
+}
+
+.user-name2 {
+  :hover {
+    text-decoration: none;
+  }
+}
+
+.panel {
+  @include default-margin;
+  background-color: #FFFFFF;
+  padding: 15px;
+  border-radius: 10px;
+  outline: 1px solid #5DFDCB;
+  border-width: 1px;
+}
+
+.user-icon2, .nameicon-panel, .introduction-panel {
+  justify-content: center;
+  text-align: center;
+}
+
+.current-user-name, .edit-link {
+  color: #1B263B;
+  display: inline-block;
+}
+
+.edit-button {
+  text-align: right;
+  margin-bottom: 7px;
+  margin-right: 5%;
+}
+
+
+.edit-link {
+  @include none-textdeco;
+  font-size: 14px;
+  border: 1px solid #4c5c68;
+  border-radius: 25px;
+  padding: 3px 10px;
+}
+
+@mixin user-icon-base {
+  width: 75px;
+  height: 75px;
+  background-color: #F038FF;
+  border-radius: 50px;
+  text-align: center;
+  padding: 25px;
+}
+
+.user-icon2 {
+  @include user-icon-base;
+  display: inline-block;
+}
+
+.user-name {
+  width: auto;
+  height: auto;
+  text-align: center;
+}
+
+.current-user-name {
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+.introduction {
+  background-color: #FFFFFF;
+  padding: 15px;
+  @include default-margin;
+  border-radius: 10px;
+  outline: 0.5px solid #1B263B;
+  border-width: 1px;
+  text-align: left;
+  font-size: 14.5px;
+}
+
+
