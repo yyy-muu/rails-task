@@ -54,13 +54,12 @@ main {
   }
 }
 
-
-
 aside {
   flex: 1;
   display: block;
   position: relative;
   padding-left: 15px;
+  flex-wrap: wrap;
 }
 
 .side-panel {
@@ -80,13 +79,17 @@ aside {
   align-items: center;
 }
 
-.user-icon {
+@mixin user-icon-base {
   width: 75px;
   height: 75px;
   background-color: #F038FF;
   border-radius: 50px;
   text-align: center;
-  padding: 25px;
+  padding: 25px; 
+}
+
+.user-icon {
+  @include user-icon-base;
   margin-right: 10px;
 }
 
@@ -94,6 +97,17 @@ aside {
   width: auto;
   height: auto;
   text-align: center;
+  
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: #1B263B;
+    font-weight: bold;
+  }
+
+  :hover {
+    text-decoration: underline;
+  }
 }
 
 .post-panel {
@@ -146,4 +160,5 @@ aside {
   border: 1px solid #4c5c68;
   border-radius: 25px;
   padding: 0 10px;
+  background-color: #FFFFFF;
 }
