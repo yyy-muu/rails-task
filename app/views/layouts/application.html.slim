@@ -13,7 +13,8 @@ html
     .container
       = render 'layouts/header'
       .main
-        = render 'layouts/alert_notice'
+        - if flash.notice.present?
+          = render 'layouts/alert_notice'
         = yield
         = render 'layouts/footer'
 

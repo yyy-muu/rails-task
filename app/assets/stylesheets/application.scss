@@ -94,7 +94,7 @@ body {
   }
 }
 
-.button, .github-button, .login-button, .to-signup-link {
+.button, .github-button, .login-button, .to-signup-link, .cancel-button, .tweet-button  {
   @include basic-button-style;
   height: 40px;
   width: 170px;
@@ -103,7 +103,7 @@ body {
 }
 
 
-.button, .github-button, .to-signup-link {
+.button, .github-button, .to-signup-link, .cancel-button, .tweet-button  {
   border: none;
   margin: 5px;
 }
