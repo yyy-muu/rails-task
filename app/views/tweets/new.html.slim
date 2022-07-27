@@ -1,0 +1,13 @@
+.sub-bar
+  = link_to 'TOPページ', root_path, class: 'top-page'
+
+= form_with model: @tweet, local: true do |f|
+  h3 新しいツイート
+
+  .panel
+    .field2
+    = f.text_area :tweet, class: 'form3', maxlength: '140', placeholder: 'なにつぶやく？', required: 'required'
+
+    .actions
+      = link_to 'やっぱりやめる', root_path, class: 'cancel-button'
+      = f.submit 'ツイート', class: 'tweet-button'

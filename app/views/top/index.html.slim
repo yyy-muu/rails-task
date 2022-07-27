@@ -81,7 +81,7 @@
           .user-name
             = link_to current_user.name, user_path(current_user)
         .post-panel
-          = link_to 'つぶやく', '#', class: 'post-link'
+          = link_to 'つぶやく', new_tweet_path, class: 'post-link'
 
   - else
     / ログインユーザでない場合

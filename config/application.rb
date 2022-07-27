@@ -13,6 +13,10 @@ module App
     config.autoload_paths += %W(#{config.root}/validator)
 
     config.i18n.default_locale = :ja
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :lockable
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+
     config.generators.template_engine = :slim
   
     # アカウント作成失敗時のレイアウト崩れ防止のため、field_with_errorsクラスを読み込まない
