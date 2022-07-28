@@ -2,9 +2,8 @@
   = link_to 'TOPページ', root_path, class: 'top-page'
 
 = form_with model: @tweet, local: true do |f|
-  h3 新しいツイート
-
   .panel
+    h4 新しいツイート
     .field2
     = f.text_area :tweet, class: 'form3', maxlength: '140', minlength: '1', placeholder: 'なにつぶやく？', required: 'required'
 
