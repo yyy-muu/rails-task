@@ -6,8 +6,8 @@
 
   .panel
     .field2
-    = f.text_area :tweet, class: 'form3', maxlength: '140', placeholder: 'なにつぶやく？', required: 'required'
+    = f.text_area :tweet, class: 'form3', maxlength: '140', minlength: '1', placeholder: 'なにつぶやく？', required: 'required'
 
-    .actions
+    .actions2
       = link_to 'やっぱりやめる', root_path, class: 'cancel-button'
       = f.submit 'ツイート', class: 'tweet-button'

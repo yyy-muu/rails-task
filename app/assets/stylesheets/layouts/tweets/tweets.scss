@@ -18,9 +18,13 @@
   font-size: 15px;
   resize: none;
 }
-.actions {
+.actions2 {
   display: flex;
   justify-content: center;
+
+  a {
+    text-align: center;
+  }
 }
 
 .cancel-button {
