@@ -1,5 +1,8 @@
 .error-message
-  = render "devise/shared/error_messages", resource: resource
+  .alert-notice
+    = content_tag(:div, flash[:error], :class => "alert") if flash[:error]
+    = content_tag(:div, flash[:notice], :class => "notice") if flash[:notice]
+    = content_tag(:div, flash[:alert], :class => "alert") if flash[:alert]
 
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   h3 ログイン
