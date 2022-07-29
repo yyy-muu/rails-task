@@ -7,13 +7,12 @@ ja:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
 
-  models:
-  tweet: ツイート
-
-attributes:
-  tweet:
-    text: ツイート
-    id: ID
+    models:
+      tweet: ツイート
+    attributes:
+      tweet:
+        text: つぶやき
+        id: ID
 
   date:
     abbr_day_names:
