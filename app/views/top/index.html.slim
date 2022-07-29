@@ -1,77 +1,22 @@
 - if user_signed_in?
   .logout-bar
-    / ログインユーザの場合
-    / ログアウトリンクを設置、遷移後にログアウトユーザと同じviewを表示(render)
     = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'logout-link'
 
 .main-wrapper
-  / ツイートを表示する(今は仮でリスト表示)
   main
-    .posts-list
-      ul
-        li 仮ツイート表示
-        li ツイート1
-        li ツイート2
-        li ツイート3
-        li ツイート4
-        li ツイート5
-        li ツイート1
-        li ツイート2
-        li ツイート3
-        li ツイート4
-        li ツイート5
-        li ツイート1
-        li ツイート2
-        li ツイート3
-        li ツイート4
-        li ツイート5
-        li ツイート1
-        li ツイート2
-        li ツイート3
-        li ツイート4
-        li ツイート5
-        li ツイート1
-        li ツイート2
-        li ツイート3
-        li ツイート4
-        li ツイート5
-        li ツイート1
-        li ツイート2
-        li ツイート3
-        li ツイート4
-        li ツイート5
-        li ツイート1
-        li ツイート2
-        li ツイート3
-        li ツイート4
-        li ツイート5
-        li ツイート1
-        li ツイート2
-        li ツイート3
-        li ツイート4
-        li ツイート5
-        li ツイート1
-        li ツイート2
-        li ツイート3
-        li ツイート4
-        li ツイート5
-        li ツイート1
-        li ツイート2
-        li ツイート3
-        li ツイート4
-        li ツイート5
-        li ツイート1
-        li ツイート2
-        li ツイート3
-        li ツイート4
-        li ツイート5
-        li ツイート1
-        li ツイート2
-        li ツイート3
-        li ツイート4
-        li ツイート5
+    - if @tweets.any?
+      ul.tweets-list
+        - @tweets.each do |tweet|
+          li.media
+            = link_to ''
+            .media-left
+              a.user-icon2 @
+              h5.tweet-user
+                = link_to tweet.user.name, tweet.user
+            .tweet-text
+              = simple_format(tweet.text)
 
-  / ログインユーザの画像とつぶやくボタンを表示(asideにしとく)
+
   - if user_signed_in?
     aside
       .side-panel
@@ -84,8 +29,6 @@
           = link_to 'つぶやく', new_tweet_path, class: 'post-link'
 
   - else
-    / ログインユーザでない場合
-    / ログイン・新規登録ページへ案内
     .login-button
       = link_to 'ログイン', new_user_session_path, class: 'login-link'
 
