@@ -1,11 +1,24 @@
-table
-  thead
-    tr
-      th= Tweet.human_attribute_name(:id)
-      th= Tweet.human_attribute_name(:text)
-  tbody
-    - @tweets.each do |tweet|
-      tr
-        td= tweet.id
-        td= tweet.text
-        
+- if user_signed_in?
+  .logout-bar
+    = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'logout-link'
+
+- else
+  .login-button
+    = link_to 'ログイン', new_user_session_path, class: 'login-link'
+
+.main-wrapper
+  main
+    - if @tweets.any?
+      ul.tweets-list
+        - @tweets.each do |tweet|
+          li.media
+            = link_to ''
+            .media-left
+              a.user-icon2 @
+              h5.tweet-user
+                = link_to tweet.user.name, tweet.user
+            .tweet-text
+              = simple_format(tweet.text)
+
+
+

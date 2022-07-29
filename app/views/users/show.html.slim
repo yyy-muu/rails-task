@@ -1,21 +1,29 @@
-- if current_user.id == @user.id
+- if user_signed_in?
   .sub-bar
-    / ログインユーザの場合
-    / TO Pページ・ログアウト・退会リンクを設置
     = link_to 'TOPページ', root_path, class: 'top-page'
     = link_to 'ログアウト', destroy_user_session_path, method: :delete
     = link_to '退会する', user_registration_path, method: :delete
   
 
   .panel
-    .edit-button
-      = link_to 'プロフィールを編集', edit_user_registration_path, class: 'edit-link'
-    .nameicon-panel
-      .user-icon2
-        | (仮)
-      .user-name2
-        a.current-user-name = @user.name
-    .introduction-panel
-      .introduction
-        = @user.self_introduction
+    - if current_user.id == @user.id
+      .edit-button
+        = link_to 'プロフィールを編集', edit_user_registration_path, class: 'edit-link'
+      .nameicon-panel
+        .user-icon2
+          | (仮)
+        .user-name2
+          a.current-user-name = @user.name
+      .introduction-panel
+        .introduction
+          = @user.self_introduction
+    - else
+      .nameicon-panel
+        .user-icon2
+          | (仮)
+        .user-name2
+          a.subject-user-name = @user.name
+      .introduction-panel
+        .introduction
+          = @user.self_introduction
 
