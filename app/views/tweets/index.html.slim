@@ -1,0 +1,11 @@
+table
+  thead
+    tr
+      th= Tweet.human_attribute_name(:id)
+      th= Tweet.human_attribute_name(:text)
+  tbody
+    - @tweets.each do |tweet|
+      tr
+        td= tweet.id
+        td= tweet.text
+        

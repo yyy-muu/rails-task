@@ -1,12 +1,14 @@
 .sub-bar
   = link_to 'TOPページ', root_path, class: 'top-page'
 
-= form_with model: @tweet, local: true do |f|
+= form_with model: @tweet, as: :text, local: true do |f|
+  = render 'layouts/error_messages', model: f.object
+
   .panel
     h4 新しいツイート
     .field2
-    = f.text_area :tweet, class: 'form3', maxlength: '140', minlength: '1', placeholder: 'なにつぶやく？', required: 'required'
+      = f.text_area :text, class: 'form3', maxlength: '140', placeholder: 'なにつぶやく？', required: 'required'
 
     .actions2
       = link_to 'やっぱりやめる', root_path, class: 'cancel-button'
-      = f.submit 'ツイート', class: 'tweet-button'
+      = f.submit 'ツイートする', class: 'tweet-button'

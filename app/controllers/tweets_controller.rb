@@ -1,27 +1,24 @@
 class TweetsController < ApplicationController
-  # ツイート作成フォーム
+  def index
+    @tweets = Tweet.all
+  end
+  
   def new
     @tweet = Tweet.new
   end
 
-  # ツイート作成
   def create
-    @tweet = Tweet.new(tweet_params)
-    if @tweet.present?
-      @tweet.save!
+    @tweet = current_user.tweets.new(tweet_params)
+    if @tweet.save!
       redirect_to root_path, notice: 'ツイートを送信しました'
     else
-      # ツイート作成に失敗した場合, 投稿内容をそのままにして保存失敗フラッシュを出す
-      # ページ遷移はせずにviewをレンダーする
-      @tweet = Tweet.new(tweet_params)
-      render 'new', notice: 'ツイート送信に失敗しました'
+      render 'new'
     end
   end
 
   private
 
   def tweet_params
-    params.require(:tweet).permit(:text).merge(user_id: current_user.id)
+    params.require(:tweet).permit(:text)
   end
-
 end
