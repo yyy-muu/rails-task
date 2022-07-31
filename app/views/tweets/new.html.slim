@@ -2,8 +2,6 @@
   = link_to 'TOPページ', root_path, class: 'top-page'
 
 = form_with model: @tweet, as: :text, local: true do |f|
-  = render 'layouts/error_messages', model: f.object
-
   .panel
     h4 新しいツイート
     .field2

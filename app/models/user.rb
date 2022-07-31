@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  # ユーザが削除されたら、関連のツイートオブジェクトも削除する
   has_many :tweets, dependent: :destroy
 
   devise :database_authenticatable, :registerable,

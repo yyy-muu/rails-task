@@ -9,9 +9,10 @@ class TweetsController < ApplicationController
 
   def create
     @tweet = current_user.tweets.new(tweet_params)
-    if @tweet.save!
+    if @tweet.save
       redirect_to root_path, notice: 'ツイートを送信しました'
     else
+      flash.now[:error] = 'ツイートの送信に失敗しました'
       render 'new'
     end
   end
