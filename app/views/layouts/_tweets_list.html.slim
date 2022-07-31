@@ -1,0 +1,12 @@
+.main-panel
+  - if @tweets.any?
+    ul.tweets-list
+      - @tweets.each do |tweet|
+        li.media
+          = link_to ''
+          .media-left
+            a.user-icon2 @
+            h5.tweet-user
+              = link_to tweet.user.name, tweet.user
+          .tweet-text
+            = simple_format(tweet.text)
