@@ -6,19 +6,5 @@
   .login-button
     = link_to 'ログイン', new_user_session_path, class: 'login-link'
 
-.main-wrapper
-  main
-    - if @tweets.any?
-      ul.tweets-list
-        - @tweets.each do |tweet|
-          li.media
-            = link_to ''
-            .media-left
-              a.user-icon2 @
-              h5.tweet-user
-                = link_to tweet.user.name, tweet.user
-            .tweet-text
-              = simple_format(tweet.text)
-
-
-
+.wrapper
+  = render partial: 'layouts/tweets_list', locals: { tweets: @tweets }

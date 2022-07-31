@@ -12,7 +12,7 @@ class TweetsController < ApplicationController
     if @tweet.save
       redirect_to root_path, notice: 'ツイートを送信しました'
     else
-      flash.now[:error] = 'ツイートの送信に失敗しました'
+      flash.now[:alert] = 'ツイートの送信に失敗しました'
       render 'new'
     end
   end
