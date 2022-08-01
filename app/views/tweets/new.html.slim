@@ -1,7 +1,6 @@
-.sub-bar
-  = link_to 'TOPページ', root_path, class: 'top-page'
+= render partial: 'layouts/to_toppage_header'
 
-= form_with model: @tweet, as: :text, local: true do |f|
+= form_with model: @tweet, local: true do |f|
   .panel
     h4 新しいツイート
     .field2

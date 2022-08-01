@@ -29,17 +29,22 @@
   flex: 3;
 }
 
-.tweets-list {
+.tweets-list, .comment-list {
   margin-bottom: 20px;
   background: #F4FAFF;
-  list-style-type: none;
+}
 
-  li {
-    background-color: #FFFFFF;
-    border: 0.5px solid #4c5c68;
-    margin: 2px 0;
-    border-radius: 3px;
-    padding: 5px;
+
+.media {
+  background-color: #FFFFFF;
+  border: 0.5px solid #4c5c68;
+  margin: 2px 0;
+  border-radius: 3px;
+  padding: 5px;
+
+  a {
+    text-decoration: none;
+    color: #19252f;
   }
 }
 
@@ -55,14 +60,14 @@
 .tweet-text {
   padding: 5px 5px 5px 15px;
   font-size: 13px;
+  width: 100%;
 }
 
-.tweet-user {
+.tweet-user, .comment-user {
   text-align: center;
   background-color: #3da9fb;
   opacity: 0.9;
   border-radius: 10px;
-  
 
   a {
     padding: 5px;
@@ -82,7 +87,6 @@
   display: flex;
   flex-wrap: wrap;
   width: 95%;
-  // max-width: 1100px;
 }
 
 .side-panel {
