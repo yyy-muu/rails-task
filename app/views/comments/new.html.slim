@@ -1,0 +1,11 @@
+= render partial: 'layouts/to_toppage_header'
+
+= form_with model: @comment, local: true do |f|
+  .panel
+    h4 新しいコメント
+    .field2
+      = f.text_area :text, class: 'form3', maxlength: '140', placeholder: 'なに返信する？', required: 'required'
+
+    .actions2
+      = link_to 'やっぱりやめる', root_path, class: 'cancel-button'
+      = f.submit 'コメントする', class: 'tweet-button'
