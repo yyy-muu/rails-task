@@ -1,7 +1,7 @@
 .main-panel
-  - if @tweets.any?
+  - if tweets.any?
     ul.tweets-list
-      - @tweets.each do |tweet|
+      - tweets.each do |tweet|
         li.media
           = link_to ''
           .media-left
