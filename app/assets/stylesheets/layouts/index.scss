@@ -6,8 +6,7 @@
   top: 0;
   width: 100%;
   min-height: 50px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 0 16px;
   z-index: 999;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -82,15 +81,12 @@
   display: flex;
   flex-wrap: wrap;
   width: 95%;
-  // max-width: 1100px;
 }
 
 .side-panel {
   background-color: #FFFFFF;
   padding: 1%;
-  margin-top: 2px;
-  margin-left: 5px;
-  height: auto;
+  margin: 2px 0 0 5px;
   border: 1px solid #5DFDCB;
   border-radius: 5px;
   width: auto;
@@ -184,8 +180,7 @@
 .logout-bar {
   width: 95%;
   margin: 0 auto;
-  padding-top: 5px;
-  padding-bottom: 10px;
+  padding: 5px 0 10px 0;
   text-align: right;
 }
 
