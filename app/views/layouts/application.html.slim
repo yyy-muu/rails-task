@@ -11,11 +11,11 @@ html
   
   body
     .container
-      = render 'layouts/header'
+      = render 'layouts/shared/header'
       .main
         - if flash.present?
-          = render 'layouts/flash'
+          = render 'layouts/shared/flash'
         = yield
-        = render 'layouts/footer'
+        = render 'layouts/shared/footer'
 
 

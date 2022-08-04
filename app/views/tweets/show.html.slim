@@ -1,7 +1,7 @@
-= render partial: 'layouts/to_toppage_header'
+= render partial: 'layouts/shared/to_toppage_header'
 .wrapper
   .main-panel
-    = render partial: 'layouts/tweet', locals: { tweet: @tweet }
+    = render partial: 'tweet', locals: { tweet: @tweet }
 
     .comment-panel
     - if @comments.any?
@@ -9,7 +9,7 @@
         p コメント一覧
       
       .comment-body
-        = render partial: 'layouts/comments_list', locals: { comments: @comments }
+        = render partial: 'comments/comments', locals: { comments: @comments }
 
   .side-panel
     .profile-panel
