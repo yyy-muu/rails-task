@@ -3,7 +3,7 @@
     .user-icon2
       | (仮)
     .user-name2
-      a.subject-user-name = tweet.user.name
+      = link_to tweet.user.name, user_path(tweet.user), class: 'subject-user-name'
   .introduction-panel
     .introduction
       = simple_format(tweet.text)

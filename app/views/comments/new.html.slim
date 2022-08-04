@@ -4,7 +4,7 @@
   .panel
     h4 新しいコメント
     .field2
-      = f.hidden_field :tweet_id, :value => @tweet.id
+      = f.hidden_field :tweet_id, :value => @tweet
       = f.text_area :text, class: 'form3', maxlength: '140', placeholder: 'なに返信する？', required: 'required'
 
     .actions2

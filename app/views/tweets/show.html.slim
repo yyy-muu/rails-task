@@ -4,6 +4,7 @@
     = render partial: 'layouts/tweet', locals: { tweet: @tweet }
 
     .comment-panel
+    - if @comments.any?
       .comment-bar
         p コメント一覧
       
@@ -17,4 +18,4 @@
       .user-name
         = link_to current_user.name, user_path(current_user)
     .post-panel
-      = link_to 'コメント', new_tweet_comment_path(@tweet.id)
+      = link_to 'コメント', new_tweet_comment_path(@tweet.id), class: 'post-link'
