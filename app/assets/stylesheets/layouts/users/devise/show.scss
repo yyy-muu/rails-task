@@ -44,13 +44,23 @@
   }
 }
 
-.panel {
-  @include default-margin;
+@mixin base-panel {
   background-color: #FFFFFF;
   padding: 15px;
   border-radius: 10px;
   outline: 1px solid #5DFDCB;
   border-width: 1px;
+}
+
+
+.panel {
+  @include default-margin;
+  @include base-panel;
+}
+
+.panel2 {
+  @include base-panel;
+  margin-top: 2px;
 }
 
 .user-icon2, .nameicon-panel, .introduction-panel {

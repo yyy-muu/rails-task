@@ -1,0 +1,20 @@
+= render partial: 'layouts/to_toppage_header'
+.wrapper
+  .main-panel
+    = render partial: 'layouts/tweet', locals: { tweet: @tweet }
+
+    .comment-panel
+      .comment-bar
+        p コメント一覧
+      
+      .comment-body
+        = render partial: 'layouts/comments_list', locals: { comments: @comments }
+
+  .side-panel
+    .profile-panel
+      .user-icon
+        | (仮)
+      .user-name
+        = link_to current_user.name, user_path(current_user)
+    .post-panel
+      = link_to 'コメント', new_tweet_comment_path(@tweet)

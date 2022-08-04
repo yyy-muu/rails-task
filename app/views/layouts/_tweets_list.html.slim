@@ -1,11 +1,11 @@
 .main-panel
-  - if @tweets.any?
+  - if tweets.any?
     .tweets-list
-      - @tweets.each do |tweet|
+      - tweets.each do |tweet|
         .media
           .media-left
             a.user-icon2 @
             h5.tweet-user
               = link_to tweet.user.name, tweet.user
-          = link_to tweet_comments_path(tweet.id), class: 'tweet-text' do
+          = link_to tweet_path(tweet), class: 'tweet-text' do
             = simple_format(tweet.text)

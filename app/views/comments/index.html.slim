@@ -1,14 +1,28 @@
-.logout-bar
-  = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'logout-link'
+/ .logout-bar
+/   = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'logout-link'
 
-.main-panel
-  - if @comments
-    ul.comment-list
-      - @comments.each do |comment|
-        li.media
-          .media-left
-            a.user-icon2 @
-            h5.comment-user
-              = link_to comment.user.name, comment.user
-          .comment-text
-            = simple_format(comment.text)
+/   .wrapper
+/     / = render partial: 'layouts/tweets_list', locals: { tweets: @tweets }
+/     .side-panel
+/       .profile-panel
+/         .user-icon
+/           | (仮)
+/         .user-name
+/           span #{current_user.name}
+/       .post-panel
+/         = link_to 'コメント', new_tweet_comment_path, class: 'post-link'
+/ / .main-panel
+/ /     ul.comment-list
+/ /       - @tweet.comments.each do |comment|
+/ /         li.media
+/ /           .media-left
+/ /             a.user-icon2 @
+/ /             h5.comment-user
+/ /               = link_to comment.user.name, comment.user
+/ /           .comment-text
+/ /             = simple_format(comment.text)
+
+/   - tweet.comments.each do |comment|
+/     - if comment.user == current_user
+/       = link_to comment.user.name, user_path(comment.user)
+/       = comment.comment

@@ -19,6 +19,12 @@ class TweetsController < ApplicationController
     end
   end
 
+  def show
+    @tweet = Tweet.find(params[:id])
+    @user = @tweet.user
+    @comments = @tweet.comments.order('created_at DESC')
+  end
+
   private
 
   def tweet_params

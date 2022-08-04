@@ -1,16 +1,14 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-    @comment = Comment.all.order('created_at DESC')
-  end
-
   def new
     @comment = Comment.new
   end
 
   def create
-    @comment = Comment.new(comment_params)
+    @comment = current_user.comments.new(comment_params)
+    # tweet = Tweet.find(params[:tweet_id])
+    # comment.tweet_id = tweet.id
     if @comment.save
       redirect_to comments_path, notice: 'コメントを送信しました'
     else
@@ -22,6 +20,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:text).merge(user_id: current_user.id, tweet_id: params[:tweet_id])
+    params.required(:comment).permit(:tweet_id, :text)
   end
 end

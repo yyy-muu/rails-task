@@ -1,0 +1,9 @@
+- if comments.any?
+  .comment-list
+    - comments.each do |comment|
+      .media
+        .media-left
+          a.user-icon2 @
+          h5.comment-user
+            = link_to comment.user.name, comment.user
+            = simple_format(comment.text)

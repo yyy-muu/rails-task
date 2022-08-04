@@ -1,0 +1,9 @@
+.panel2
+  .nameicon-panel
+    .user-icon2
+      | (仮)
+    .user-name2
+      a.subject-user-name = tweet.user.name
+  .introduction-panel
+    .introduction
+      = simple_format(tweet.text)
