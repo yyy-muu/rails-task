@@ -49,37 +49,37 @@ body {
   flex: 1;
 }
 
-.alert-notice {
+.flash {
   padding: 5px;
   height: 40px;
-}
 
-.alert {
-  display: inline-block;
-  background-color: #f2dede;
-  text-align: center;
-  color: #a94442;
-  border-color: #ebccd1;
-  width: 100%;
-  border-radius: 5px;
-}
+  .alert {
+    display: inline-block;
+    background-color: #f2dede;
+    text-align: center;
+    color: #a94442;
+    border-color: #ebccd1;
+    width: 100%;
+    border-radius: 5px;
+  }
 
-.notice {
-  display: inline-block;
-  background-color: #c8f9d7;
-  text-align: center;
-  color: #338847;
-  border-color: #a9f6c1;
-  width: 100%;
-  border-radius: 5px; 
+  .notice {
+    display: inline-block;
+    background-color: #c8f9d7;
+    text-align: center;
+    color: #338847;
+    border-color: #a9f6c1;
+    width: 100%;
+    border-radius: 5px; 
+  }
 }
 
 .footer {
   text-align: center;
-  margin-bottom: 10px;
   margin-top: 10px;
   width: 100%;
-  padding-bottom: 5px;
+  padding: 20px 0;
+  background-color: #f0f6b8;
 }
 
 @mixin basic-button-style {
@@ -94,7 +94,7 @@ body {
   }
 }
 
-.button, .github-button, .login-button, .to-signup-link {
+.button, .github-button, .login-button, .to-signup-link, .cancel-button, .tweet-button  {
   @include basic-button-style;
   height: 40px;
   width: 170px;
@@ -103,7 +103,7 @@ body {
 }
 
 
-.button, .github-button, .to-signup-link {
+.button, .github-button, .to-signup-link, .cancel-button, .tweet-button  {
   border: none;
   margin: 5px;
 }

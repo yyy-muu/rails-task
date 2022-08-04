@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_many :tweets, dependent: :destroy
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :name, presence: true
@@ -22,19 +22,15 @@ class User < ApplicationRecord
     result
   end
 
-
-  # instead of deleting, indicate the user requested a delete & timestamp it
   def soft_delete
-    update_attributes(deleted_at: Time.current)
+    update(deleted_at: Time.current)
   end
 
-  # ensure user account is active
   def active_for_authentication?
     super && !deleted_at
   end
 
-  # provide a custom message for a deleted account
   def inactive_message
-    !deleted_at ? super : :deleted_account
+    deleted_at ? :deleted_account : super
   end
 end
