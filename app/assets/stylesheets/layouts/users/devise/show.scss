@@ -109,6 +109,10 @@
 .subject-user-name {
   margin-top: 5px;
   font-weight: bold;
+  
+  :hover {
+    @include none-textdeco;
+  }
 }
 
 .introduction {

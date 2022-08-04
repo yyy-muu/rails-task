@@ -7,5 +7,5 @@
             a.user-icon2 @
             h5.tweet-user
               = link_to tweet.user.name, tweet.user
-          = link_to tweet_path(tweet), class: 'tweet-text' do
+          = link_to tweet_path(tweet), class: 'text' do
             = simple_format(tweet.text)
