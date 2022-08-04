@@ -17,4 +17,4 @@
       .user-name
         = link_to current_user.name, user_path(current_user)
     .post-panel
-      = link_to 'コメント', new_tweet_comment_path(@tweet)
+      = link_to 'コメント', new_tweet_comment_path(@tweet.id)
