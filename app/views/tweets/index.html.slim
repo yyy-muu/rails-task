@@ -1,0 +1,10 @@
+- if user_signed_in?
+  .logout-bar
+    = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'logout-link'
+
+- else
+  .login-button
+    = link_to 'ログイン', new_user_session_path, class: 'login-link'
+
+.wrapper
+  = render partial: 'layouts/tweets_list', locals: { tweets: @tweets }

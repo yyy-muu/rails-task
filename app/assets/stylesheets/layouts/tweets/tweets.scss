@@ -1,0 +1,49 @@
+// Place all the styles related to the tweets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.field2 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+h4 {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  color: #1B263B;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.form3 {
+  background-color: #FFFFFF;
+  padding: 15px;
+  height: 120px;
+  min-width: 100%;
+  border: none;
+  text-align: left;
+  font-size: 15px;
+  resize: none;
+}
+.actions2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  a {
+    text-align: center;
+  }
+}
+
+.cancel-button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 9px;
+  background-color: #ff3e41;
+}
+
+.tweet-button {
+  background-color: #3772ff;
+}
