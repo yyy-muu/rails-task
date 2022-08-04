@@ -22,8 +22,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     list-style-type: none;
-    margin-top: 1px;
-    margin-right: 10px;
+    margin: 5px 5px 5px 0;
     border: 1px solid #4c5c68;
     border-radius: 25px;
     padding: 0 8px;
@@ -45,7 +44,7 @@
 @mixin base-panel {
   background-color: #ffffff;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 20px;
   outline: 1px solid #5dfdcb;
   border-width: 1px;
 }
@@ -53,11 +52,13 @@
 .panel {
   @include default-margin;
   @include base-panel;
+  box-shadow: 3px 3px #07e69f;
 }
 
 .panel2 {
   @include base-panel;
   margin-top: 2px;
+  box-shadow: 1px 1px #07e69f;
 }
 
 .user-icon2,
@@ -109,7 +110,7 @@
 .subject-user-name {
   margin-top: 5px;
   font-weight: bold;
-  
+
   :hover {
     @include none-textdeco;
   }
