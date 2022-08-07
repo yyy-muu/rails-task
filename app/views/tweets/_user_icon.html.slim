@@ -1,0 +1,4 @@
+- if tweet.user.profile_image.attached?
+  = image_tag tweet.user.profile_image, class: 'user-icon2'
+- else
+  = image_tag 'nophoto.png', class: 'user-icon2'
