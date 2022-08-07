@@ -6,5 +6,6 @@
   .user-name2
     a.subject-user-name = @user.name
 .introduction-panel
-  .introduction
-    = @user.self_introduction
+  - if @user.self_introduction.present?
+    .introduction
+      = @user.self_introduction

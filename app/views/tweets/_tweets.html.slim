@@ -4,10 +4,7 @@
       - tweets.each do |tweet|
         .media
           .media-left
-            - if tweet.user.profile_image.attached?
-              = image_tag tweet.user.profile_image, class: 'user-icon2'
-            - else
-              = image_tag 'nophoto.png', class: 'user-icon2'
+            = render partial: 'tweets/user_icon', locals: { tweet: tweet }
             h5.tweet-user
               = link_to tweet.user.name, tweet.user
           = link_to tweet_path(tweet), class: 'text' do
