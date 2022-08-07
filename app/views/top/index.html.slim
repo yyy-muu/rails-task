@@ -6,8 +6,10 @@
     = render partial: 'tweets/tweets', locals: { tweets: @tweets }
     .side-panel
       .profile-panel
-        .user-icon
-          | (仮)
+        - if current_user.profile_image.attached?
+          = image_tag current_user.profile_image, class: 'user-icon'
+        - else
+          = image_tag 'nophoto.png', class: 'user-icon'
         .user-name
           = link_to current_user.name, user_path(current_user)
       .post-panel

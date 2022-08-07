@@ -9,8 +9,12 @@
     h3 プロフィールを編集
 
     .user-icon-frame
-      .user-icon2
-        | (仮)
+      - if @user.profile_image.attached?
+        = image_tag @user.profile_image, class: 'user-icon2'
+      - else
+        = image_tag 'nophoto.png', class: 'user-icon2'
+      = f.file_field :profile_image
+
     .field
       = f.label :name, class:'form-control'
       br
