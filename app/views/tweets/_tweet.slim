@@ -1,7 +1,9 @@
 .panel2
   .nameicon-panel
-    .user-icon2
-      | (仮)
+    - if tweet.user.profile_image.attached?
+      = image_tag tweet.user.profile_image, class: 'user-icon2'
+    - else
+      = image_tag 'nophoto.png', class: 'user-icon2'
     .user-name2
       = link_to tweet.user.name, user_path(tweet.user), class: 'subject-user-name'
   .introduction-panel
