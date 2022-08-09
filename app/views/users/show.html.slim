@@ -9,7 +9,5 @@
     - if current_user.id == @user.id
       .edit-button
         = link_to 'プロフィールを編集', edit_user_registration_path, class: 'edit-link'
-      = render partial: 'profile_panel'
-    - else
-      = render partial: 'profile_panel'
+    = render partial: 'profile_panel'
 
