@@ -1,16 +1,17 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.comment-panel {
-  margin-top: 20px;
-  width: 100%;
-}
+.comment {
+  &-panel {
+    margin-top: 20px;
+    width: 100%;
+  }
 
-.comment-bar {
-  text-align: center;
-  margin-bottom: 10px;
+  &-bar {
+    text-align: center;
+    margin-bottom: 10px;
 
-  p {
+    p {
     display: inline-block;
     background-color: #3772ff;
     margin: 10px auto;
@@ -20,5 +21,7 @@
     padding: 4px 15px;
     border-radius: 25px;
     height: 30px;
+    }
   }
 }
+

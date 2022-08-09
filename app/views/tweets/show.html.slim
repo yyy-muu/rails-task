@@ -4,12 +4,12 @@
     = render partial: 'tweet', locals: { tweet: @tweet }
 
     .comment-panel
-    - if @comments.any?
-      .comment-bar
-        p コメント一覧
-      
-      .comment-body
-        = render partial: 'comments/comments', locals: { comments: @comments }
+      - if @comments.any?
+        .comment-bar
+          p コメント一覧
+        
+        .comment-body
+          = render partial: 'comments/comments', locals: { comments: @comments }
 
   .side-panel
     .profile-panel
