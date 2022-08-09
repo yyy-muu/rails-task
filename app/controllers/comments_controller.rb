@@ -7,10 +7,8 @@ class CommentsController < ApplicationController
 
   def create
     @comment = current_user.comments.new(comment_params)
-    tweet = Tweet.find(params[:tweet_id])
-    @comment.tweet_id = tweet.id
     if @comment.save
-      redirect_to tweet_path(tweet.id), notice: 'コメントを送信しました'
+      redirect_to tweet_path(params[:tweet_id]), notice: 'コメントを送信しました'
     else
       flash.now[:alert] = 'コメントの送信に失敗しました'
       render 'new'
