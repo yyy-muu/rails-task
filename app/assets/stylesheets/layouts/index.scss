@@ -43,6 +43,10 @@ h1 {
   padding: 5px;
   box-shadow: 0.5px 0.5px #4c5c68;
 
+  &-left {
+    padding: 0 5px;
+  }
+
   a {
     text-decoration: none;
     color: #19252f;
@@ -53,10 +57,6 @@ h1 {
 .text {
   display: table-cell;
   vertical-align: top;
-}
-
-.media-left {
-  padding: 0 5px;
 }
 
 .text {
