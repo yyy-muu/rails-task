@@ -14,7 +14,7 @@
  *= require_self
  */
 
-$basic-button-color: #3772FF;
+$basic-button-color: #3772ff;
 
 * {
   box-sizing: border-box;
@@ -26,10 +26,11 @@ html {
   border: 0;
 }
 
-html, body {
-  background-color: #F4FAFF;
+html,
+body {
+  background-color: #f4faff;
   height: 100%;
-  font-family: 'NotoSans',sans-serif;
+  font-family: "NotoSans", sans-serif;
 }
 
 body {
@@ -70,7 +71,7 @@ body {
     color: #338847;
     border-color: #a9f6c1;
     width: 100%;
-    border-radius: 5px; 
+    border-radius: 5px;
   }
 }
 
@@ -84,7 +85,7 @@ body {
 
 @mixin basic-button-style {
   font-weight: bold;
-  color: #FFFFFF;
+  color: #ffffff;
   opacity: 0.9;
   font-size: 15px;
   cursor: pointer;
@@ -94,7 +95,12 @@ body {
   }
 }
 
-.button, .github-button, .login-button, .to-signup-link, .cancel-button, .tweet-button  {
+.button,
+.github-button,
+.login-button,
+.to-signup-link,
+.cancel-button,
+.tweet-button {
   @include basic-button-style;
   height: 40px;
   width: 170px;
@@ -102,21 +108,36 @@ body {
   justify-content: center;
 }
 
-
-.button, .github-button, .to-signup-link, .cancel-button, .tweet-button  {
+.button,
+.github-button,
+.to-signup-link,
+.cancel-button,
+.tweet-button {
   border: none;
   margin: 5px;
 }
 
-.to-signup-link, .login-button, .button {
+.to-signup-link,
+.login-button,
+.button {
   background-color: $basic-button-color;
 }
 
-.to-login-link, .to-signup-link, .github-button, label, em, .post-link, .logout-link {
+.to-login-link,
+.to-signup-link,
+.github-button,
+label,
+em,
+.post-link,
+.logout-link {
   display: inline-block;
 }
 
-.github-button, .github-button, .post-link, .login-link, .logout-link, .to-signup-link {
+.github-button,
+.github-button,
+.post-link,
+.login-link,
+.logout-link,
+.to-signup-link {
   text-decoration: none;
 }
-

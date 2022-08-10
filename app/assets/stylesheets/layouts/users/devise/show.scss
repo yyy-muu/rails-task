@@ -17,18 +17,17 @@
 
   a {
     @include none-textdeco;
-    color: #1B263B;
+    color: #1b263b;
     display: inline-block;
     flex-direction: row;
     flex-wrap: wrap;
     list-style-type: none;
-    margin-top: 1px;
-    margin-right: 10px;
+    margin: 5px 5px 5px 0;
     border: 1px solid #4c5c68;
     border-radius: 25px;
     padding: 0 8px;
     font-size: 15px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
   }
 }
 
@@ -42,22 +41,36 @@
   }
 }
 
-.panel {
-  @include default-margin;
-  background-color: #FFFFFF;
+@mixin base-panel {
+  background-color: #ffffff;
   padding: 15px;
-  border-radius: 10px;
-  outline: 1px solid #5DFDCB;
+  border-radius: 20px;
   border-width: 1px;
+  border: solid 1px #07e69f
 }
 
-.user-icon2, .nameicon-panel, .introduction-panel {
+.panel {
+  @include default-margin;
+  @include base-panel;
+  box-shadow: 3px 3px #07e69f;
+}
+
+.tweet-panel {
+  @include base-panel;
+  margin-top: 2px;
+  box-shadow: 1px 1px #07e69f;
+}
+
+.user-icon2,
+.nameicon-panel,
+.introduction-panel {
   justify-content: center;
   text-align: center;
 }
 
-.subject-user-name, .edit-link {
-  color: #1B263B;
+.subject-user-name,
+.edit-link {
+  color: #1b263b;
   display: inline-block;
 }
 
@@ -65,7 +78,6 @@
   text-align: right;
   margin: 0 5% 7px 0;
 }
-
 
 .edit-link {
   @include none-textdeco;
@@ -78,7 +90,7 @@
 @mixin user-icon-base {
   width: 75px;
   height: 75px;
-  background-color: #F038FF;
+  background-color: #f038ff;
   border-radius: 50px;
   text-align: center;
   padding: 25px;
@@ -98,17 +110,19 @@
 .subject-user-name {
   margin-top: 5px;
   font-weight: bold;
+
+  :hover {
+    @include none-textdeco;
+  }
 }
 
 .introduction {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding: 15px;
   @include default-margin;
   border-radius: 10px;
-  outline: 0.5px solid #1B263B;
+  outline: 0.5px solid #1b263b;
   border-width: 1px;
   text-align: left;
   font-size: 14.5px;
 }
-
-

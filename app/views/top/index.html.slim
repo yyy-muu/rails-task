@@ -3,7 +3,7 @@
     = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'logout-link'
 
   .wrapper
-    = render partial: 'layouts/tweets_list', locals: { tweets: @tweets }
+    = render partial: 'tweets/tweets', locals: { tweets: @tweets }
     .side-panel
       .profile-panel
         .user-icon
@@ -17,7 +17,7 @@
   .login-button
     = link_to 'ログイン', new_user_session_path, class: 'login-link'
   .wrapper
-    = render partial: 'layouts/tweets_list', locals: { tweets: @tweets }
+    = render partial: 'tweets/tweets', locals: { tweets: @tweets }
 
 
 

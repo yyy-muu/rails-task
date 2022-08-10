@@ -1,4 +1,6 @@
 class TweetsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @tweets = Tweet.all.order('created_at DESC')
   end
@@ -15,6 +17,12 @@ class TweetsController < ApplicationController
       flash.now[:alert] = 'ツイートの送信に失敗しました'
       render 'new'
     end
+  end
+
+  def show
+    @tweet = Tweet.find(params[:id])
+    @user = @tweet.user
+    @comments = @tweet.comments.order('created_at DESC')
   end
 
   private
