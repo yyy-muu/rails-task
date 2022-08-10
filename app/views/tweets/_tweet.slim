@@ -1,0 +1,9 @@
+.tweet-panel
+  .nameicon-panel
+    .user-icon2
+      | (仮)
+    .user-name2
+      = link_to tweet.user.name, user_path(tweet.user), class: 'subject-user-name'
+  .introduction-panel
+    .introduction
+      = simple_format(tweet.text)

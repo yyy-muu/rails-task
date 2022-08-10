@@ -1,5 +1,5 @@
 h3 {
-  color: #1B263B;
+  color: #1b263b;
   text-align: center;
   padding: 5px 0;
   height: 50px;
@@ -7,11 +7,11 @@ h3 {
 }
 
 .new_user {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding: 15px;
   margin: 5%;
   border-radius: 10px;
-  outline: 1px solid #5DFDCB;
+  outline: 1px solid #5dfdcb;
   border-width: 1px;
 }
 
@@ -26,18 +26,18 @@ h3 {
 }
 
 .form-control {
-  color: #1B263B;
+  color: #1b263b;
 }
 
 .form {
   border-radius: 5px;
-  border: 1px solid #1B263B;
+  border: 1px solid #1b263b;
   border-width: 1px;
   height: 35px;
   width: 100%;
   padding: 6px 12px;
   font-size: 14px;
-  color: #1B263B;
+  color: #1b263b;
 }
 
 .field {
@@ -47,7 +47,7 @@ h3 {
 .to-login-link {
   margin: 10px 0 3px 0;
   height: 20px;
-  color: #1B263B;
+  color: #1b263b;
 }
 
 .to-signup-link {
@@ -55,11 +55,12 @@ h3 {
   text-align: center;
 }
 
-label, em {
+label,
+em {
   max-width: 100%;
   margin-bottom: 5px;
   font-weight: 700;
-  color: #1B263B
+  color: #1b263b;
 }
 
 .check-box {
@@ -69,9 +70,9 @@ label, em {
 .sign-up {
   margin-top: 15px;
 }
-  .signup {
-    font-size: 13px;
-  }
+.signup {
+  font-size: 13px;
+}
 
 .error-message {
   margin: 0 5%;
@@ -79,7 +80,7 @@ label, em {
 
   ul {
     background-color: #fff0f3;
-    border: 0.5px solid #EF709D;
+    border: 0.5px solid #ef709d;
     border-radius: 10px;
     padding: 10px;
   }
@@ -89,5 +90,3 @@ label, em {
     color: #c9184a;
   }
 }
-
-

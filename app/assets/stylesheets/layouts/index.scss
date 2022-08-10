@@ -12,60 +12,69 @@
   border-bottom-right-radius: 10px;
   display: flex;
   justify-content: center;
-  background-image: linear-gradient(45deg,  #f024eb 0%, #3772ff, #5DFDCB 100%);
+  background-image: linear-gradient(45deg, #f024eb 0%, #3772ff, #5dfdcb 100%);
 }
-  h1 {
-    width: auto;
-    display: flex;
-    justify-content: center;
-    color: #FFFFFF;
-    font-size: 25px;
-    padding: 5px;
-  }
+
+h1 {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 25px;
+  padding: 5px;
+}
 
 .main-panel {
   margin: 0 auto;
   flex: 3;
 }
 
-.tweets-list {
+.tweets-list,
+.comment-list {
   margin-bottom: 20px;
-  background: #F4FAFF;
-  list-style-type: none;
+  background: #f4faff;
+}
 
-  li {
-    background-color: #FFFFFF;
-    border: 0.5px solid #4c5c68;
-    margin: 2px 0;
-    border-radius: 3px;
-    padding: 5px;
+.media {
+  background-color: #ffffff;
+  border: 0.5px solid #4c5c68;
+  margin: 2px 0;
+  border-radius: 3px;
+  padding: 5px;
+  box-shadow: 0.5px 0.5px #4c5c68;
+
+  &-left {
+    padding: 0 5px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #19252f;
   }
 }
 
-.media-left, .tweet-text {
+.media-left,
+.text {
   display: table-cell;
   vertical-align: top;
 }
 
-.media-left {
-  padding: 0 5px;
-}
-
-.tweet-text {
+.text {
   padding: 5px 5px 5px 15px;
   font-size: 13px;
+  width: 100%;
 }
 
-.tweet-user {
+.tweet-user,
+.comment-user {
   text-align: center;
   background-color: #3da9fb;
   opacity: 0.9;
   border-radius: 10px;
-  
 
   a {
     padding: 5px;
-    color: #FFFFFF;
+    color: #ffffff;
     background-color: none;
     text-decoration: none;
   }
@@ -80,19 +89,19 @@
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  width: 95%;
+  width: 90%;
 }
 
 .side-panel {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding: 1%;
   margin: 2px 0 0 5px;
   border: 1px solid #5DFDCB;
-  border-radius: 5px;
+  box-shadow: 0.5px 0.5px #07e69f;
+  border-radius: 20px;
   width: auto;
   flex: 1;
   height: 180px;
-  vertical-align: middle;
 }
 
 .profile-panel {
@@ -106,10 +115,10 @@
 @mixin user-icon-base {
   width: 75px;
   height: 75px;
-  background-color: #F038FF;
+  background-color: #f038ff;
   border-radius: 50px;
   text-align: center;
-  padding: 25px; 
+  padding: 25px;
 }
 
 .user-icon {
@@ -125,11 +134,11 @@
   width: auto;
   height: auto;
   text-align: center;
-  
+
   a {
     display: inline-block;
     text-decoration: none;
-    color: #1B263B;
+    color: #1b263b;
     font-weight: bold;
   }
 
@@ -147,19 +156,18 @@
   border-radius: 30px;
   cursor: pointer;
 }
-  :hover {
-    opacity: 1;
-  }
+:hover {
+  opacity: 1;
+}
 
 .post-link {
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: none;
   padding: 5px;
   opacity: 0.9;
   font-weight: bolder;
   font-size: 15px;
 }
-
 
 .login-button {
   position: fixed;
@@ -168,10 +176,10 @@
   right: 0;
   display: flex;
   margin: auto;
- }
+}
 
 .login-link {
-  color: #FFFFFF;
+  color: #ffffff;
   font-weight: bolder;
   display: block;
   justify-content: center;
@@ -189,5 +197,5 @@
   border: 1px solid #4c5c68;
   border-radius: 25px;
   padding: 0 10px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
