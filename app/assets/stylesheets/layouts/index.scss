@@ -112,19 +112,10 @@ h1 {
   align-items: center;
 }
 
-@mixin user-icon-base {
+.user-icon {
   width: 75px;
   height: 75px;
   border-radius: 50px;
-}
-
-.user-icon {
-  @include user-icon-base;
-  margin-right: 10px;
-}
-
-.user-icon2 {
-  margin: 3px;
 }
 
 .user-name {
