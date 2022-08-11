@@ -19,7 +19,8 @@
   .actions
     = f.submit "ログイン", class: 'button'
     br
-    = link_to "Githubでサインイン", '#', class: 'github-button'
+    = link_to "Githubでサインイン", omniauth_authorize_path(resource_name, provider), method: :post, class: 'github-button'
+    / = link_to "Githubでサインイン", '#', class: 'github-button'
     br
     .sign-up
       signup ▼まだ会員登録してない方はこちらから新規登録▼
