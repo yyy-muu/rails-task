@@ -4,7 +4,8 @@ class User < ApplicationRecord
   has_one_attached :profile_image
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :omniauthable
+         :recoverable, :rememberable, :validatable,
+         :omniauthable, omniauth_providers: [:github]
   validates :name, presence: true
   # validates :profile_image
   validates :self_introduction, length: { maximum: 160 }
