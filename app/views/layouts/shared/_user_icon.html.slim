@@ -1,0 +1,4 @@
+- if user.profile_image.attached?
+  = image_tag user.profile_image, class: 'user-icon'
+- else
+  = image_tag 'icon.png', class: 'user-icon'

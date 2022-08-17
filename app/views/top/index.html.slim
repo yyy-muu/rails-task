@@ -6,7 +6,7 @@
     = render partial: 'tweets/tweets', locals: { tweets: @tweets }
     .side-panel
       .profile-panel
-        = render partial: 'layouts/shared/current_user_icon'
+        = render partial: 'layouts/shared/user_icon', locals: { user: current_user }
         .user-name
           = link_to current_user.name, user_path(current_user)
       .post-panel
