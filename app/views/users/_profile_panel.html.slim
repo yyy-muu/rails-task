@@ -5,7 +5,7 @@
     = image_tag 'icon.png', class: 'user-icon2'
   .user-name2
     a.subject-user-name = @user.name
-.introduction-panel
-  - if @user.self_introduction.present?
+- if @user.self_introduction.present?
+  .introduction-panel
     .introduction
       = @user.self_introduction
