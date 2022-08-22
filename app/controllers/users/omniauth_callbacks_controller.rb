@@ -5,8 +5,17 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # devise :omniauthable, omniauth_providers: [:twitter]
 
   # You should also create an action method in this controller like this:
-  # def twitter
-  # end
+  def github
+    @user = User.find_for_github_oauth(request.env['omniauth.auth'])
+    # ＠ユーザ情報がDBに保存済みか確認し、真ならサインイン
+    if @user.persisted?
+      sign_in_and_redirect @user, event: :authentication
+      set_flash_message(:notice, :success, kind: "Github") if is_navigational_format?
+    else
+      session["devise.github_data"] = request.env["omniauth.auth"]
+      redirect_to new_user_registration_url
+    end
+  end
 
   # More info at:
   # https://github.com/heartcombo/devise#omniauth
@@ -16,10 +25,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   #   super
   # end
 
-  # GET|POST /users/auth/twitter/callback
-  # def failure
-  #   super
-  # end
+  # GET|POST
+  def failure
+    redirect_to root_path
+  end
 
   # protected
 
