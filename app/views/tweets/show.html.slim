@@ -13,8 +13,7 @@
 
   .side-panel
     .profile-panel
-      .user-icon
-        | (仮)
+      = render partial: 'layouts/shared/user_icon', locals: { user: current_user }
       .user-name
         = link_to current_user.name, user_path(current_user)
     .post-panel

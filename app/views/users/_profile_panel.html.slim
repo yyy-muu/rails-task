@@ -1,6 +1,8 @@
 .nameicon-panel
-  .user-icon2
-    | (仮)
+  - if @user.profile_image.attached?
+    = image_tag @user.profile_image, class: 'user-icon2'
+  - else
+    = image_tag 'icon.png', class: 'user-icon2'
   .user-name2
     a.subject-user-name = @user.name
 - if @user.self_introduction.present?

@@ -112,22 +112,10 @@ h1 {
   align-items: center;
 }
 
-@mixin user-icon-base {
+.user-icon {
   width: 75px;
   height: 75px;
-  background-color: #f038ff;
   border-radius: 50px;
-  text-align: center;
-  padding: 25px;
-}
-
-.user-icon {
-  @include user-icon-base;
-  margin-right: 10px;
-}
-
-.user-icon2 {
-  margin: 3px;
 }
 
 .user-name {
@@ -140,6 +128,7 @@ h1 {
     text-decoration: none;
     color: #1b263b;
     font-weight: bold;
+    margin-left: 5px;
   }
 
   :hover {

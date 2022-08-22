@@ -61,7 +61,7 @@
   box-shadow: 1px 1px #07e69f;
 }
 
-.user-icon2,
+.user-icon,
 .nameicon-panel,
 .introduction-panel {
   justify-content: center;
@@ -90,15 +90,19 @@
 @mixin user-icon-base {
   width: 75px;
   height: 75px;
-  background-color: #f038ff;
   border-radius: 50px;
-  text-align: center;
-  padding: 25px;
 }
 
 .user-icon2 {
   @include user-icon-base;
   display: inline-block;
+}
+
+#user_profile_image {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 10px;
 }
 
 .user-name {
