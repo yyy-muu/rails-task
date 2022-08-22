@@ -4,7 +4,7 @@
       - tweets.each do |tweet|
         .media
           .media-left
-            = render partial: 'tweets/user_icon', locals: { tweet: tweet }
+            = render partial: 'layouts/shared/user_icon', locals: { user: tweet.user }
             h5.tweet-user
               = link_to tweet.user.name, tweet.user
           = link_to tweet_path(tweet), class: 'text' do

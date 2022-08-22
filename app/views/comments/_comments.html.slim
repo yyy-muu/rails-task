@@ -4,9 +4,9 @@
       .media
         .media-left
           - if comment.user.profile_image.attached?
-            = image_tag comment.user.profile_image, class: 'user-icon2'
+            = image_tag comment.user.profile_image, class: 'user-icon'
           - else
-            = image_tag 'nophoto.png', class: 'user-icon2'
+            = image_tag 'icon.png', class: 'user-icon'
           h5.comment-user
             = link_to comment.user.name, comment.user
         .text
