@@ -10,6 +10,20 @@ class User < ApplicationRecord
   # validates :profile_image
   validates :self_introduction, length: { maximum: 160 }
 
+  def self.find_for_github_oauth(auth)
+    # 送られてきたプロバイダとuidと一致するユーザを探し、登録
+    where(provider: auth.provider, uid: auth.uid).first_or_create! do |user|
+      user.name = auth.info.name
+      user.email = auth.info.email
+      # トークンで作成する仮パスワード
+      user.password = Devise.friendly_token[0, 20]
+    end
+  end
+
+  def self.create_unique_string
+    SecureRandom.uuid
+  end
+
   def update_without_current_password(params)
     if params[:password].blank? && params[:password_confirmation].blank?
       params.delete(:password)
