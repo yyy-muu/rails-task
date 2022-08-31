@@ -58,12 +58,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # Githubアカウント非連携ユーザにuidを持たせる
-  def build_resource(hash = {})
-    hash[:uid] = User.create_unique_string
-    super
-  end
-
   protected
 
   def update_resource(resource, params)

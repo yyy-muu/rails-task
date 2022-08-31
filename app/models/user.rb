@@ -6,9 +6,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:github]
+
   validates :name, presence: true
-  # validates :profile_image
   validates :self_introduction, length: { maximum: 160 }
+  validates :uid, uniqueness: { scope: :provider }, if: :uid
 
   def self.find_for_github_oauth(auth)
     # 送られてきたプロバイダとuidと一致するユーザを探し、登録
@@ -18,10 +19,6 @@ class User < ApplicationRecord
       # トークンで作成する仮パスワード
       user.password = Devise.friendly_token[0, 20]
     end
-  end
-
-  def self.create_unique_string
-    SecureRandom.uuid
   end
 
   def update_without_current_password(params)
