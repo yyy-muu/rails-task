@@ -31,7 +31,10 @@ gem 'redis-rails'
 gem 'redis-namespace'
 gem 'devise'
 gem 'devise-i18n'
-
+gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+gem 'omniauth-rails_csrf_protection'
+gem 'omniauth'
+gem 'dotenv-rails'
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
