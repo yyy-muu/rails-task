@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :tweets, dependent: :destroy
   has_many :comments
+  has_many :likes
   has_one_attached :profile_image
 
   devise :database_authenticatable, :registerable,
