@@ -1,11 +1,9 @@
-.main-panel
-  - if tweets.any?
-    .tweets-list
-      - tweets.each do |tweet|
-        .media
-          .media-left
-            = render partial: 'layouts/shared/user_icon', locals: { user: tweet.user }
-            h5.tweet-user
-              = link_to tweet.user.name, tweet.user
-          = link_to tweet_path(tweet), class: 'text' do
-            = simple_format(tweet.text)
+.tweets-list
+  - tweets.each do |tweet|
+    .media
+      .media-left
+        = render partial: 'layouts/shared/user_icon', locals: { user: tweet.user }
+        h5.tweet-user
+          = link_to tweet.user.name, tweet.user
+      = link_to tweet_path(tweet), class: 'text' do
+        = simple_format(tweet.text)

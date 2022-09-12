@@ -1,13 +1,12 @@
-- if comments.any?
-  .comment-list
-    - comments.each do |comment|
-      .media
-        .media-left
-          - if comment.user.profile_image.attached?
-            = image_tag comment.user.profile_image, class: 'user-icon'
-          - else
-            = image_tag 'icon.png', class: 'user-icon'
-          h5.comment-user
-            = link_to comment.user.name, comment.user
-        .text
-          = simple_format(comment.text)
+.comment-list
+  - comments.each do |comment|
+    .media
+      .media-left
+        - if comment.user.profile_image.attached?
+          = image_tag comment.user.profile_image, class: 'user-icon'
+        - else
+          = image_tag 'icon.png', class: 'user-icon'
+        h5.comment-user
+          = link_to comment.user.name, comment.user
+      .text
+        = simple_format(comment.text)
