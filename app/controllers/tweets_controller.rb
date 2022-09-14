@@ -25,6 +25,11 @@ class TweetsController < ApplicationController
     @comments = @tweet.comments.order('created_at DESC')
   end
 
+  def like_tweet
+    # likesモジュールを持ってくる
+    like(@tweet)
+  end
+
   private
 
   def tweet_params

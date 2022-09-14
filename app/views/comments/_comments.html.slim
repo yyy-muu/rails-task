@@ -8,5 +8,12 @@
           = image_tag 'icon.png', class: 'user-icon'
         h5.comment-user
           = link_to comment.user.name, comment.user
+        h5.likes
+          - if comment.liked_by?(current_user)
+            = link_to '♥', '#', method: :delete
+          - else
+            = link_to '♡', '#', method: :post
+        h5.count-likes
+          = comment.liked_count
       .text
         = simple_format(comment.text)

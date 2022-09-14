@@ -15,6 +15,11 @@ class CommentsController < ApplicationController
     end
   end
 
+  def like_comment
+    # likesモジュールを持ってくる
+    like(@comment)
+  end
+
   private
 
   def comment_params

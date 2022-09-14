@@ -4,5 +4,13 @@
     .user-name2
       = link_to tweet.user.name, user_path(tweet.user), class: 'subject-user-name'
   .introduction-panel
-    .introduction
+    .tweet-content
       = simple_format(tweet.text)
+  .like-panel
+    h5.likes
+      - if tweet.liked_by?(current_user)
+        = link_to '♥', "#{tweet.id}/like", method: :delete
+      - else
+        = link_to '♡', "#{tweet.id}/like", method: :post
+    h5.count-likes
+      = tweet.liked_count
