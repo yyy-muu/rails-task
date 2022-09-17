@@ -9,8 +9,8 @@
   .like-panel
     h5.likes
       - if tweet.liked_by?(current_user)
-        = link_to '♥', "#{tweet.id}/like", method: :delete
+        = link_to '♥', like_tweet_path(tweet), method: :post
       - else
-        = link_to '♡', "#{tweet.id}/like", method: :post
+        = link_to '♡', like_tweet_path(tweet), method: :post
     h5.count-likes
       = tweet.liked_count

@@ -11,7 +11,8 @@ Rails.application.routes.draw do
 
   resources :tweets, only: [:index, :new, :create, :show] do
     resources :comments, only: [:new, :create]
-    resources :likes, only: [:create, :destroy]
   end
 
+  post 'comments/:id/like', to: 'comments#like_comment', as: 'like_comment'
+  post 'tweets/:id/like', to: 'tweets#like_tweet', as: 'like_tweet'
 end

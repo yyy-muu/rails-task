@@ -15,8 +15,19 @@ class CommentsController < ApplicationController
     end
   end
 
+  def like(comment)
+    @comment = Comment.find(params[:id])
+  # いいね済の場合、いいね解除する
+  if @comment.liked_by?(current_user)
+    @comment.unliked_by(current_user)
+    redirect_to request.referer
+  else # 未いいねの場合、いいねする
+    @comment.liked_by(current_user)
+    redirect_to request.referer
+  end
+end
+
   def like_comment
-    # likesモジュールを持ってくる
     like(@comment)
   end
 
