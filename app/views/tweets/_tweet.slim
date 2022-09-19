@@ -1,12 +1,8 @@
-.tweet-panel
-  .nameicon-panel
+.media
+  .media-left
     = render partial: 'layouts/shared/user_icon', locals: { user: tweet.user }
-    .user-name2
-      = link_to tweet.user.name, user_path(tweet.user), class: 'subject-user-name'
-  .introduction-panel
-    .tweet-content
-      = simple_format(tweet.text)
-  .like-panel
+    h5.comment-user
+      = link_to tweet.user.name, tweet.user
     h5.likes
       - if tweet.liked_by?(current_user)
         = link_to '♥', like_tweet_path(tweet), method: :post
@@ -14,3 +10,5 @@
         = link_to '♡', like_tweet_path(tweet), method: :post
     h5.count-likes
       = tweet.liked_count
+  .text
+    = simple_format(tweet.text)

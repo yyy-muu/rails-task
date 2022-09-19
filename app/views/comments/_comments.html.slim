@@ -1,6 +1,6 @@
 .comment-list
   - comments.each do |comment|
-    .media
+    .media-comment
       .media-left
         - if comment.user.profile_image.attached?
           = image_tag comment.user.profile_image, class: 'user-icon'

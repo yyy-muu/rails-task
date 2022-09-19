@@ -11,30 +11,23 @@
         = link_to 'プロフィールを編集', edit_user_registration_path, class: 'edit-link'
     = render partial: 'profile_panel'
 
-  .tab-panel
-    .tab-bar
-      .tab-current
-        p Tweetと返信
-      .tab
-        p いいねした投稿
-
-    .tab-content
+  .tab
+    input#tab1.tab__switch checked='' name='tabs' type='radio'
+    label.tab__label for='tab1' Tweetと返信
+    .tab__content
       - if @user.tweets.any?
         .tweets-list
           - @user.tweets.each do |tweet|
-            .media
-              .media-left
-                = render partial: 'layouts/shared/user_icon', locals: { user: tweet.user }
-                h5.tweet-user
-                  = link_to tweet.user.name, tweet.user
-                h5.likes
-                  - if tweet.liked_by?(current_user)
-                    = link_to '♥', like_tweet_path(tweet), method: :post
-                  - else
-                    = link_to '♡', like_tweet_path(tweet), method: :post
-                h5.count-likes
-                  = tweet.liked_count
-              = link_to tweet_path(tweet), class: 'text' do
-                = simple_format(tweet.text)
-              - if tweet.comments.any?
-                = render partial: 'comments/comments', locals: { comments: tweet.comments }
+            = render partial: 'tweets/tweets', locals: { tweet: tweet }
+
+    input#tab2.tab__switch checked='' name='tabs' type='radio'
+    label.tab__label for='tab2' いいねした投稿
+    .tab__content
+      - @liked_posts.each do |liked_post|
+        - if liked_post.likable_type == 'Tweet'
+          - tweets = Tweet.find(liked_post.likable_id)
+          = render tweets
+        - else
+          - liked_post.likable_type == 'Comment'
+          - comments = Comment.find(liked_post.likable_id)
+          = render comments

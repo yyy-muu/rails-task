@@ -34,6 +34,9 @@ h1 {
   margin-bottom: 5px;
   background-color: #f4faff;
 }
+.comment-list {
+  border-bottom: 0.5px dashed #4c5c68; 
+}
 
 .media {
   background-color: #ffffff;
@@ -51,15 +54,14 @@ h1 {
     text-decoration: none;
     color: #19252f;
   }
+
+  &-comment {
+    border-top: 0.5px dashed #4c5c68;
+    background-color: #ffffff;
+  }
 }
 
-.inner-comment {
-  margin-top: 10px;
-  padding: 5px 0;
-  background-color: #ffffff;
-  // border-top: 0.5px dashed #4c5c68;  
-  border-bottom: 0.5px dashed #4c5c68;  
-}
+
 
 .media-left,
 .text {

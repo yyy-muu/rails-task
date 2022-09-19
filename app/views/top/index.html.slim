@@ -5,7 +5,8 @@
   .wrapper
     .main-panel
       - if @tweets.any?
-        = render partial: 'tweets/tweets', locals: { tweets: @tweets }
+        - @tweets.each do |tweet|
+          = render partial: 'tweets/tweets', locals: { tweet: tweet }
     .side-panel
       .profile-panel
         = render partial: 'layouts/shared/user_icon', locals: { user: current_user }

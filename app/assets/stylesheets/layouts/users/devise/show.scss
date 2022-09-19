@@ -135,3 +135,36 @@
 .introduction {
   @include default-margin;
 }
+
+.tab {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: #fff;
+  &__label {
+    color: #fff;
+    background: #ccc;
+    margin-right: 5px;
+    padding: 6px 16px;
+    order:-1;
+    cursor: pointer;
+  }
+
+  &__content {
+    width: 100%;
+    display: none;
+    padding: 20px;
+  }
+
+  &__switch {
+    display: none;
+  }
+
+  &__switch:checked+&__label {
+    background: #3772ff;
+  }
+
+  &__switch:checked+&__label+&__content {
+    display: block;
+  }
+}
