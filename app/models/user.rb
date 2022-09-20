@@ -51,4 +51,17 @@ class User < ApplicationRecord
   def inactive_message
     deleted_at ? :deleted_account : super
   end
+
+  # ユーザフォロー・フォロー解除・フォロー確認
+  def follow(other_user)
+    self.following << other_user
+  end
+
+  def unfollow(other_user)
+    self.following.destroy(other_user)
+  end
+
+  def following?(other_user)
+    self.following.include?(other_user)
+  end
 end

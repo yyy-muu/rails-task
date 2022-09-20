@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     resources :comments, only: [:new, :create]
   end
 
+  resources :relationships, only: [:create, :destroy]
+
   post 'comments/:id/like', to: 'comments#like_comment', as: 'like_comment'
   post 'tweets/:id/like', to: 'tweets#like_tweet', as: 'like_tweet'
 end
