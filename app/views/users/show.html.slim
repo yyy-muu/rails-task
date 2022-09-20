@@ -16,9 +16,23 @@
     label.tab__label for='tab1' Tweetと返信
     .tab__content
       - if @user.tweets.any?
-        .tweets-list
-          - @user.tweets.each do |tweet|
-            = render partial: 'tweets/tweets', locals: { tweet: tweet }
+      - @user.tweets.each do |tweet|
+        .media
+          .media-left
+            = render partial: 'layouts/shared/user_icon', locals: { user: tweet.user }
+            h5.tweet-user
+              = link_to tweet.user.name, tweet.user
+            h5.likes
+              - if tweet.liked_by?(current_user)
+                = link_to '♥', like_tweet_path(tweet), method: :post
+              - else
+                = link_to '♡', like_tweet_path(tweet), method: :post
+            h5.count-likes
+              = tweet.liked_count
+          = link_to tweet_path(tweet), class: 'text' do
+            = simple_format(tweet.text)
+          - if tweet.comments.any?
+            = render partial: 'comments/comments', locals: { comments: tweet.comments }
 
     input#tab2.tab__switch checked='' name='tabs' type='radio'
     label.tab__label for='tab2' いいねした投稿
