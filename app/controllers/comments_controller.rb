@@ -15,20 +15,14 @@ class CommentsController < ApplicationController
     end
   end
 
-  def like(_comment)
+  def like_comment
     @comment = Comment.find(params[:id])
-    # いいね済の場合、いいね解除する
-    if @comment.liked_by?(current_user)
-      @comment.unliked_by(current_user)
-      redirect_to request.referer
-    else # 未いいねの場合、いいねする
-      @comment.liked_by(current_user)
-      redirect_to request.referer
-    end
+    like(@comment)
   end
 
-  def like_comment
-    like(@comment)
+  def unlike_comment
+    @comment = Comment.find(params[:id])
+    unlike(@comment)
   end
 
   private
@@ -36,4 +30,5 @@ class CommentsController < ApplicationController
   def comment_params
     params.required(:comment).permit(:tweet_id, :text)
   end
+
 end
