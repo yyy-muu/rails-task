@@ -16,6 +16,6 @@ module Liked
 
   # 該当ユーザにいいねされたかどうか
   def liked_by?(user)
-    likes.where(user: user).present?
+    user.likes.find(like_ids).present?
   end
 end
