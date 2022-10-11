@@ -19,12 +19,12 @@ class CommentsController < ApplicationController
 
   def like_comment
     @comment = Comment.find(params[:id])
-    like(@comment)
+    like(@comment, current_user)
   end
 
   def unlike_comment
     @comment = Comment.find(params[:id])
-    unlike(@comment)
+    unlike(@comment, current_user)
   end
 
   private

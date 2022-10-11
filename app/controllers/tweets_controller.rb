@@ -29,12 +29,12 @@ class TweetsController < ApplicationController
 
   def like_tweet
     @tweet = Tweet.find(params[:id])
-    like(@tweet)
+    like(@tweet, current_user)
   end
 
   def unlike_tweet
     @tweet = Tweet.find(params[:id])
-    unlike(@tweet)
+    unlike(@tweet, current_user)
   end
 
   private
