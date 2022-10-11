@@ -46,7 +46,7 @@
   padding: 15px;
   border-radius: 20px;
   border-width: 1px;
-  border: solid 1px #07e69f
+  border: solid 1px #07e69f;
 }
 
 .panel {
@@ -146,7 +146,7 @@
     background: #ccc;
     margin-right: 5px;
     padding: 6px 16px;
-    order:-1;
+    order: -1;
     cursor: pointer;
   }
 
@@ -160,11 +160,11 @@
     display: none;
   }
 
-  &__switch:checked+&__label {
+  &__switch:checked + &__label {
     background: #3772ff;
   }
 
-  &__switch:checked+&__label+&__content {
+  &__switch:checked + &__label + &__content {
     display: block;
   }
 }

@@ -3,7 +3,7 @@
     = link_to 'TOPページ', root_path, class: 'top-page'
     = link_to 'ログアウト', destroy_user_session_path, method: :delete
     = link_to '退会する', user_registration_path, method: :delete
-  
+
 
   .panel
     - if current_user.id == @user.id

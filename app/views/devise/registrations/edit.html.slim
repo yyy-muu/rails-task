@@ -1,7 +1,7 @@
 - if current_user.id == @user.id
   .sub-bar
     = link_to 'TOPページ', root_path, class: 'top-page'
-  
+
   .error-message
     = render "devise/shared/error_messages", resource: resource
 
@@ -30,7 +30,7 @@
       = f.label :email, class: 'form-control'
       br
       = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form'
-    
+
     .field
       = f.label :password, class: 'form-control'
       p ※パスワードを変更しない場合は、空欄のまま保存ボタンをクリックしてください。
@@ -42,7 +42,7 @@
       = f.label :password_confirmation, class: 'form-control'
       br
       = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form'
-    
+
     .actions
       = f.submit "保存", class: 'button'
       br

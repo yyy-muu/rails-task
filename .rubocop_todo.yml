@@ -12,7 +12,7 @@
 # Include: **/*.gemfile, **/Gemfile, **/gems.rb
 Bundler/OrderedGems:
   Exclude:
-    - 'Gemfile'
+    - "Gemfile"
 
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
@@ -20,20 +20,20 @@ Bundler/OrderedGems:
 # SupportedStyles: with_first_argument, with_fixed_indentation
 Layout/ArgumentAlignment:
   Exclude:
-    - 'bin/webpack'
-    - 'bin/webpack-dev-server'
+    - "bin/webpack"
+    - "bin/webpack-dev-server"
 
 # Offense count: 6
 # This cop supports safe autocorrection (--autocorrect).
 Layout/EmptyLineAfterGuardClause:
   Exclude:
-    - 'bin/bundle'
+    - "bin/bundle"
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 Layout/EmptyLines:
   Exclude:
-    - 'db/migrate/20220713145145_devise_create_users.rb'
+    - "db/migrate/20220713145145_devise_create_users.rb"
 
 # Offense count: 3
 # This cop supports safe autocorrection (--autocorrect).
@@ -41,8 +41,8 @@ Layout/EmptyLines:
 # SupportedStyles: empty_lines, no_empty_lines
 Layout/EmptyLinesAroundBlockBody:
   Exclude:
-    - 'db/schema.rb'
-    - 'spec/requests/top_spec.rb'
+    - "db/schema.rb"
+    - "spec/requests/top_spec.rb"
 
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
@@ -52,7 +52,7 @@ Layout/EmptyLinesAroundBlockBody:
 # SupportedLastArgumentHashStyles: always_inspect, always_ignore, ignore_implicit, ignore_explicit
 Layout/HashAlignment:
   Exclude:
-    - 'config/routes.rb'
+    - "config/routes.rb"
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
@@ -60,7 +60,7 @@ Layout/HashAlignment:
 # SupportedStyles: aligned, indented
 Layout/MultilineOperationIndentation:
   Exclude:
-    - 'bin/bundle'
+    - "bin/bundle"
 
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
@@ -69,25 +69,25 @@ Layout/MultilineOperationIndentation:
 # SupportedStylesForEmptyBrackets: space, no_space
 Layout/SpaceInsideArrayLiteralBrackets:
   Exclude:
-    - 'config/environments/production.rb'
+    - "config/environments/production.rb"
 
 # Offense count: 7
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: AllowInHeredoc.
 Layout/TrailingWhitespace:
   Exclude:
-    - 'app/controllers/application_controller.rb'
-    - 'config/application.rb'
-    - 'config/environments/development.rb'
-    - 'config/routes.rb'
-    - 'spec/factories/users.rb'
+    - "app/controllers/application_controller.rb"
+    - "config/application.rb"
+    - "config/environments/development.rb"
+    - "config/routes.rb"
+    - "spec/factories/users.rb"
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: IgnoreEmptyBlocks, AllowUnusedKeywordArguments.
 Lint/UnusedBlockArgument:
   Exclude:
-    - 'config/application.rb'
+    - "config/application.rb"
 
 # Offense count: 1
 # Configuration parameters: IgnoredMethods.
@@ -110,29 +110,29 @@ Metrics/PerceivedComplexity:
 # SupportedStyles: nested, compact
 Style/ClassAndModuleChildren:
   Exclude:
-    - 'app/controllers/users/confirmations_controller.rb'
-    - 'app/controllers/users/omniauth_callbacks_controller.rb'
-    - 'app/controllers/users/passwords_controller.rb'
-    - 'app/controllers/users/registrations_controller.rb'
-    - 'app/controllers/users/sessions_controller.rb'
-    - 'app/controllers/users/unlocks_controller.rb'
-    - 'test/channels/application_cable/connection_test.rb'
-    - 'test/test_helper.rb'
+    - "app/controllers/users/confirmations_controller.rb"
+    - "app/controllers/users/omniauth_callbacks_controller.rb"
+    - "app/controllers/users/passwords_controller.rb"
+    - "app/controllers/users/registrations_controller.rb"
+    - "app/controllers/users/sessions_controller.rb"
+    - "app/controllers/users/unlocks_controller.rb"
+    - "test/channels/application_cable/connection_test.rb"
+    - "test/test_helper.rb"
 
 # Offense count: 8
 # Configuration parameters: AllowedConstants.
 Style/Documentation:
   Exclude:
-    - 'spec/**/*'
-    - 'test/**/*'
-    - 'app/controllers/application_controller.rb'
-    - 'app/controllers/top_controller.rb'
-    - 'app/helpers/application_helper.rb'
-    - 'app/helpers/top_helper.rb'
-    - 'app/models/application_record.rb'
-    - 'config/application.rb'
-    - 'db/migrate/20220713145145_devise_create_users.rb'
-    - 'db/migrate/20220716171215_add_name_to_user.rb'
+    - "spec/**/*"
+    - "test/**/*"
+    - "app/controllers/application_controller.rb"
+    - "app/controllers/top_controller.rb"
+    - "app/helpers/application_helper.rb"
+    - "app/helpers/top_helper.rb"
+    - "app/models/application_record.rb"
+    - "config/application.rb"
+    - "db/migrate/20220713145145_devise_create_users.rb"
+    - "db/migrate/20220716171215_add_name_to_user.rb"
 
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
@@ -140,15 +140,15 @@ Style/Documentation:
 # SupportedStyles: compact, expanded
 Style/EmptyMethod:
   Exclude:
-    - 'app/controllers/top_controller.rb'
+    - "app/controllers/top_controller.rb"
 
 # Offense count: 3
 # This cop supports safe autocorrection (--autocorrect).
 Style/ExpandPathArguments:
   Exclude:
-    - 'bin/bundle'
-    - 'bin/rails'
-    - 'bin/rake'
+    - "bin/bundle"
+    - "bin/rails"
+    - "bin/rake"
 
 # Offense count: 49
 # This cop supports unsafe autocorrection (--autocorrect-all).
@@ -161,7 +161,7 @@ Style/FrozenStringLiteralComment:
 # This cop supports unsafe autocorrection (--autocorrect-all).
 Style/GlobalStdStream:
   Exclude:
-    - 'config/environments/production.rb'
+    - "config/environments/production.rb"
 
 # Offense count: 5
 # This cop supports safe autocorrection (--autocorrect).
@@ -170,52 +170,52 @@ Style/GlobalStdStream:
 # SupportedShorthandSyntax: always, never, either
 Style/HashSyntax:
   Exclude:
-    - 'config/routes.rb'
+    - "config/routes.rb"
 
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
 Style/IfUnlessModifier:
   Exclude:
-    - 'bin/bundle'
+    - "bin/bundle"
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: MinDigits, Strict, AllowedNumbers.
 Style/NumericLiterals:
   Exclude:
-    - 'db/schema.rb'
+    - "db/schema.rb"
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: PreferredDelimiters.
 Style/PercentLiteralDelimiters:
   Exclude:
-    - 'config/application.rb'
+    - "config/application.rb"
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 Style/PerlBackrefs:
   Exclude:
-    - 'bin/bundle'
+    - "bin/bundle"
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 Style/Proc:
   Exclude:
-    - 'config/application.rb'
+    - "config/application.rb"
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 Style/RedundantBegin:
   Exclude:
-    - 'bin/yarn'
+    - "bin/yarn"
 
 # Offense count: 2
 # This cop supports unsafe autocorrection (--autocorrect-all).
 # Configuration parameters: SafeForConstants.
 Style/RedundantFetchBlock:
   Exclude:
-    - 'config/puma.rb'
+    - "config/puma.rb"
 
 # Offense count: 1
 # This cop supports unsafe autocorrection (--autocorrect-all).
@@ -228,7 +228,7 @@ Style/SpecialGlobalVars:
 # This cop supports safe autocorrection (--autocorrect).
 Style/StderrPuts:
   Exclude:
-    - 'bin/yarn'
+    - "bin/yarn"
 
 # Offense count: 84
 # This cop supports safe autocorrection (--autocorrect).
@@ -236,21 +236,21 @@ Style/StderrPuts:
 # SupportedStyles: single_quotes, double_quotes
 Style/StringLiterals:
   Exclude:
-    - 'Gemfile'
-    - 'bin/bundle'
-    - 'bin/webpack'
-    - 'bin/webpack-dev-server'
-    - 'bin/yarn'
-    - 'config/environments/production.rb'
-    - 'config/puma.rb'
-    - 'config/routes.rb'
-    - 'config/spring.rb'
-    - 'db/migrate/20220713145145_devise_create_users.rb'
-    - 'db/schema.rb'
-    - 'spec/requests/top_spec.rb'
-    - 'spec/views/top/index.html.slim_spec.rb'
-    - 'test/application_system_test_case.rb'
-    - 'test/channels/application_cable/connection_test.rb'
+    - "Gemfile"
+    - "bin/bundle"
+    - "bin/webpack"
+    - "bin/webpack-dev-server"
+    - "bin/yarn"
+    - "config/environments/production.rb"
+    - "config/puma.rb"
+    - "config/routes.rb"
+    - "config/spring.rb"
+    - "db/migrate/20220713145145_devise_create_users.rb"
+    - "db/schema.rb"
+    - "spec/requests/top_spec.rb"
+    - "spec/views/top/index.html.slim_spec.rb"
+    - "test/application_system_test_case.rb"
+    - "test/channels/application_cable/connection_test.rb"
 
 # Offense count: 3
 # This cop supports safe autocorrection (--autocorrect).
@@ -265,7 +265,7 @@ Style/SymbolArray:
 # SupportedStylesForMultiline: comma, consistent_comma, no_comma
 Style/TrailingCommaInHashLiteral:
   Exclude:
-    - 'config/routes.rb'
+    - "config/routes.rb"
 
 # Offense count: 4
 # This cop supports safe autocorrection (--autocorrect).
