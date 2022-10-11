@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
 
+  include LikesController
+
   def new
     @comment = Comment.new
   end
