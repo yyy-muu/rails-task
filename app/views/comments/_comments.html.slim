@@ -8,11 +8,12 @@
           = image_tag 'icon.png', class: 'user-icon'
         h5.comment-user
           = link_to comment.user.name, comment.user
-        h5.likes
-          - if comment.liked_by?(current_user)
-            = link_to '♥', like_comment_path(comment), method: :post
-          - else
-            = link_to '♡', like_comment_path(comment), method: :post
+        - if comment.liked_by?(current_user)
+          = form_with url: unlike_comment_path(comment), method: :post do |f|
+            = f.submit '♥', class: 'likes'
+        - else
+          = form_with url: like_comment_path(comment), method: :post do |f|
+            = f.submit '♡', class: 'likes'
         h5.count-likes
           = comment.liked_count
       .text

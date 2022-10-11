@@ -25,20 +25,14 @@ class TweetsController < ApplicationController
     @comments = @tweet.comments.order('created_at DESC')
   end
 
-  def like(_tweet)
+  def like_tweet
     @tweet = Tweet.find(params[:id])
-    # いいね済の場合、いいね解除する
-    if @tweet.liked_by?(current_user)
-      @tweet.unliked_by(current_user)
-      redirect_to request.referer
-    else # 未いいねの場合、いいねする
-      @tweet.liked_by(current_user)
-      redirect_to request.referer
-    end
+    like(@tweet)
   end
 
-  def like_tweet
-    like(@tweet)
+  def unlike_tweet
+    @tweet = Tweet.find(params[:id])
+    unlike(@tweet)
   end
 
   private

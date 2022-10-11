@@ -5,14 +5,15 @@
 .likes,
 .count-likes {
   float: left;
+}
+.count-likes {
   font-size: 15px;
-  
-  a {
-    text-decoration: none;
-    color: deeppink;
-  }
 }
 
 .likes {
   padding-right: 3px;
+  background: none;
+  color: deeppink;
+  border: none;
+  font-size: large;
 }

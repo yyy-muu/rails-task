@@ -4,6 +4,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @liked_posts = Like.where(user_id: @user)
+    @liked_posts = @user.likes.order('created_at DESC')
   end
 end
