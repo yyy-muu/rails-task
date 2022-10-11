@@ -1,11 +1,18 @@
-.main-panel
-  - if tweets.any?
-    .tweets-list
-      - tweets.each do |tweet|
-        .media
-          .media-left
-            = render partial: 'layouts/shared/user_icon', locals: { user: tweet.user }
-            h5.tweet-user
-              = link_to tweet.user.name, tweet.user
-          = link_to tweet_path(tweet), class: 'text' do
-            = simple_format(tweet.text)
+- @tweets.each do |tweet|
+  .media
+    .media-left
+      = render partial: 'layouts/shared/user_icon', locals: { user: tweet.user }
+      h5.tweet-user
+        = link_to tweet.user.name, tweet.user
+      - if tweet.liked_by?(current_user)
+        = form_with url: unlike_tweet_path(tweet), method: :post do |f|
+          = f.submit '♥', class: 'likes'
+      - else
+        = form_with url: like_tweet_path(tweet), method: :post do |f|
+          = f.submit '♡', class: 'likes'
+      h5.count-likes
+        = tweet.liked_count
+    = link_to tweet_path(tweet), class: 'text' do
+      = simple_format(tweet.text)
+    - if tweet.comments.any?
+      = render partial: 'comments/comments', locals: { comments: tweet.comments }

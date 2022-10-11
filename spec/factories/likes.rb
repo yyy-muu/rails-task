@@ -1,4 +1,4 @@
 FactoryBot.define do
-  factory :comment do
+  factory :like do
   end
 end

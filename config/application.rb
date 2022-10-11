@@ -18,7 +18,7 @@ module App
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
 
     config.generators.template_engine = :slim
-  
+
     # アカウント作成失敗時のレイアウト崩れ防止のため、field_with_errorsクラスを読み込まない
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
 

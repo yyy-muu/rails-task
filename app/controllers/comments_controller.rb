@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
 
+  include LikesController
+
   def new
     @comment = Comment.new
   end
@@ -13,6 +15,16 @@ class CommentsController < ApplicationController
       flash.now[:alert] = 'コメントの送信に失敗しました'
       render 'new'
     end
+  end
+
+  def like_comment
+    @comment = Comment.find(params[:id])
+    like(@comment, current_user)
+  end
+
+  def unlike_comment
+    @comment = Comment.find(params[:id])
+    unlike(@comment, current_user)
   end
 
   private

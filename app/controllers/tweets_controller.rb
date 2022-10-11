@@ -1,6 +1,8 @@
 class TweetsController < ApplicationController
   before_action :authenticate_user!
 
+  include LikesController
+
   def index
     @tweets = Tweet.all.order('created_at DESC')
   end
@@ -23,6 +25,16 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
     @user = @tweet.user
     @comments = @tweet.comments.order('created_at DESC')
+  end
+
+  def like_tweet
+    @tweet = Tweet.find(params[:id])
+    like(@tweet, current_user)
+  end
+
+  def unlike_tweet
+    @tweet = Tweet.find(params[:id])
+    unlike(@tweet, current_user)
   end
 
   private

@@ -1,5 +1,4 @@
-以下の手順でRailsサーバー立ち上げることができます。
-
+以下の手順で Rails サーバー立ち上げることができます。
 
 1. `git clone https://github.com/happiness-chain/rails-task.git`
 

@@ -1,0 +1,19 @@
+// Place all the styles related to the likes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.likes,
+.count-likes {
+  float: left;
+}
+.count-likes {
+  font-size: 15px;
+}
+
+.likes {
+  padding-right: 3px;
+  background: none;
+  color: deeppink;
+  border: none;
+  font-size: large;
+}
