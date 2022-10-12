@@ -3,12 +3,19 @@
     = link_to 'TOPページ', root_path, class: 'top-page'
     = link_to 'ログアウト', destroy_user_session_path, method: :delete
     = link_to '退会する', user_registration_path, method: :delete
-  
 
   .panel
     - if current_user.id == @user.id
       .edit-button
         = link_to 'プロフィールを編集', edit_user_registration_path, class: 'edit-link'
+    - else
+      - if current_user.following?(@user)
+        = form_with(model: current_user.active_relationships.find_by(followed_id: @user.id), html: { method: :delete }) do |f|
+          = f.submit 'フォロー解除', class: 'follow-button'
+      - else
+        = form_with(model: current_user.active_relationships.build) do |f|
+          = hidden_field_tag :followed_id, @user.id
+          = f.submit 'フォロー', class: 'follow-button'
     = render partial: 'profile_panel'
 
   .tab
