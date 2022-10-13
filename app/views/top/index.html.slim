@@ -2,6 +2,11 @@
   .logout-bar
     = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'logout-link'
 
+  .search-bar
+    = form_with local: true do |f|
+      = f.text_field :text, class: 'search-form', maxlength: '30', placeholder: 'さがす'
+      = f.submit '検索', class: 'search-button'
+
   .wrapper
     .main-panel
       - if @tweets.any?
@@ -21,6 +26,3 @@
     .main-panel
       - if @tweets.any?
         = render partial: 'tweets/tweets', locals: { tweets: @tweets }
-
-
-
