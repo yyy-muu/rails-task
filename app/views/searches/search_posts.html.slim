@@ -1,0 +1,11 @@
+
+= render partial: 'layouts/shared/to_toppage_header'
+h4 検索結果一覧
+.search-results
+  - if @target == 'Tweet'
+    - @tweets.each do |tweet|
+      = render tweet
+  - else
+    - @target == 'Comment'
+    - @comments.each do |comment|
+      = render comment

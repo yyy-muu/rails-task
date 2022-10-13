@@ -3,8 +3,8 @@
     = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'logout-link'
 
   .search-bar
-    = form_with local: true do |f|
-      = f.text_field :text, class: 'search-form', maxlength: '30', placeholder: 'さがす'
+    = form_with url: search_posts_path, local: true, method: :get do |f|
+      = f.text_field :keywords, class: 'search-form', maxlength: '30', placeholder: 'さがす'
       = f.submit '検索', class: 'search-button'
 
   .wrapper

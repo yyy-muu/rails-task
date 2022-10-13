@@ -1,0 +1,13 @@
+// Place all the styles related to the searches controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+h4 {
+  margin-top: 10px;
+  text-decoration: underline #5dfdcb 3px;
+  text-underline-offset: 5px;
+}
+
+.search-results {
+  width: 90%;
+  margin: 10px auto;
+}
