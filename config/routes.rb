@@ -25,5 +25,4 @@ Rails.application.routes.draw do
   post 'tweets/:id/unlike', to: 'tweets#unlike_tweet', as: 'unlike_tweet'
 
   get 'search', to: 'searches#search_posts', as: 'search_posts'
-
 end

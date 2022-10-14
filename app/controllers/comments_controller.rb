@@ -30,5 +30,4 @@ class CommentsController < ApplicationController
   def comment_params
     params.required(:comment).permit(:tweet_id, :text)
   end
-
 end
