@@ -52,15 +52,17 @@ class User < ApplicationRecord
     deleted_at ? :deleted_account : super
   end
 
-  # ユーザフォロー・フォロー解除・フォロー確認
+  # ユーザフォロー
   def follow(other_user)
     following << other_user
   end
 
+  # フォロー解除
   def unfollow(other_user)
     active_relationships.find_by(followed_id: other_user.id).destroy
   end
 
+  # フォロー確認
   def following?(other_user)
     following.include?(other_user)
   end
