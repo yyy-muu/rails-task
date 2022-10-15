@@ -2,9 +2,10 @@ class SearchesController < ApplicationController
   def search_posts
     @target = params[:target] # 検索対象モデル
 
-    if @target == 'ツイート'
+    case @target
+    when 'ツイート'
       @tweets = Tweet.find_keywords(params[:keywords])
-    elsif @target == 'コメント'
+    when 'コメント'
       @comments = Comment.find_keywords(params[:keywords])
     else
       @tweets = Tweet.find_keywords(params[:keywords])
