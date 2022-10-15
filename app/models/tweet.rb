@@ -8,6 +8,6 @@ class Tweet < ApplicationRecord
   validates :text, presence: true, length: { maximum: 140 }
 
   def self.find_keywords(keywords)
-    @tweet = Tweet.where('text LIKE?', "%#{keywords}%")
+    Tweet.where('text LIKE?', "%#{keywords}%")
   end
 end
