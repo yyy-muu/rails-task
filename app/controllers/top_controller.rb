@@ -1,6 +1,4 @@
 class TopController < ApplicationController
-  before_action :authenticate_user!, only: [:show]
-
   def index
     @tweets = if user_signed_in?
                 # 自分の投稿とフォローユーザの投稿を表示

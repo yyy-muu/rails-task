@@ -1,6 +1,4 @@
 class SearchesController < ApplicationController
-  before_action :authenticate_user!
-
   def search_posts
     @target = params[:target] # 検索対象モデル
 
