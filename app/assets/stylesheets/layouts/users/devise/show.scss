@@ -68,8 +68,7 @@
   text-align: center;
 }
 
-.subject-user-name,
-.edit-link {
+.subject-user-name {
   color: #1b263b;
   display: inline-block;
 }
@@ -79,12 +78,16 @@
   margin: 0 5% 7px 0;
 }
 
+.follow-button,
 .edit-link {
   @include none-textdeco;
   font-size: 14px;
+  font-weight: bold;
+  color: #3772ff;
   border: 1px solid #4c5c68;
   border-radius: 25px;
   padding: 3px 10px;
+  background-color: #ffffff;
 }
 
 @mixin user-icon-base {

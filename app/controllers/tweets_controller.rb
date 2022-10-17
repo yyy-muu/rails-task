@@ -1,8 +1,7 @@
 class TweetsController < ApplicationController
-  before_action :authenticate_user!
 
   include LikesController
-
+  
   def index
     @tweets = Tweet.all.order('created_at DESC')
   end

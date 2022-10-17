@@ -196,3 +196,29 @@ h1 {
   padding: 0 10px;
   background-color: #ffffff;
 }
+
+.search {
+  &-bar {
+    height: 40px;
+    width: 90%;
+    margin: 10px auto;
+    padding: 5px;
+    border: 1.5px solid #3da9fb;
+    border-radius: 5px;
+    background-color: #ffffff;
+  }
+
+  &-form {
+    width: 70%;
+    height: 25px;
+    padding-left: 5px;
+    margin: 0 10px 0 8px;
+    border: none;
+    resize: none;
+    font-size: 15px;
+  }
+
+  &-button {
+    float: right;
+  }
+}

@@ -1,0 +1,19 @@
+
+= render partial: 'layouts/shared/to_toppage_header'
+h4 検索結果一覧
+.search-results
+  - if (@tweets || @comments).size == 0
+    p.no-results --- 検索結果がありません ---
+  - else
+    - if @target == Tweet.name
+      - @tweets.each do |tweet|
+        = render tweet
+    - elsif @target == Comment.name
+      - @comments.each do |comment|
+        = render comment
+    - else
+      h5 ＜全投稿から検索した結果＞
+      - @tweets.each do |tweet|
+        = render tweet
+      - @comments.each do |comment|
+        = render comment
