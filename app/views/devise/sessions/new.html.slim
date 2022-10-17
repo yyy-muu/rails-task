@@ -10,12 +10,12 @@
     = f.label :password, class:'form-control'
     br
     = f.password_field :password, autocomplete: "current-password", class: 'form'
-  
+
   - if devise_mapping.rememberable?
     .field
       = f.check_box :remember_me, class: 'check-box'
       = f.label :remember_me
-  
+
   .actions
     = f.submit "ログイン", class: 'button'
     br

@@ -1,11 +1,11 @@
-version: '3.7'
+version: "3.7"
 services:
   db:
     image: mysql:8.0.20
     volumes:
       - mysql:/var/lib/mysql:delegated
     ports:
-      - '3307:3306'
+      - "3307:3306"
     command: --default-authentication-plugin=mysql_native_password
     env_file: .env
 
@@ -20,7 +20,7 @@ services:
     depends_on:
       - db
     ports:
-      - '3000:3000'
+      - "3000:3000"
     volumes:
       - .:/app:cached
       - bundle:/usr/local/bundle:delegated
