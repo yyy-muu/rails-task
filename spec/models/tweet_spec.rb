@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Tweet, type: :model do
-  let(:tweet) { FactoryBot.build(:tweet) }
+  let(:user) { FactoryBot.create(:user, email: 'testuser2@test.com') }
+  let(:tweet) { FactoryBot.build(:tweet, user_id: user.id) }
 
   describe 'positive' do
     # ツイートを作成できる(ユーザと紐づき、140文字以内のツイート文が存在する)
@@ -11,21 +12,20 @@ RSpec.describe Tweet, type: :model do
 
     describe 'positive for likable' do
       before do
-        @user = FactoryBot.create(:user, email: 'testuser2@test.com')
         tweet.save
       end
 
       # ツイートはユーザにいいねされる
       it 'is likable by user' do
-        tweet.liked_by(@user)
-        expect(tweet.likes.where(user: @user).present?).to be_truthy
+        tweet.liked_by(user)
+        expect(tweet.likes.where(user: user).present?).to be_truthy
       end
 
       # ツイートはユーザにいいね解除される
       it 'is unlikable by user' do
-        tweet.liked_by(@user)
-        tweet.unliked_by(@user)
-        expect(tweet.likes.where(user: @user).present?).to be_falsey
+        tweet.liked_by(user)
+        tweet.unliked_by(user)
+        expect(tweet.likes.where(user: user).present?).to be_falsey
       end
     end
   end
