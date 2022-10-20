@@ -17,7 +17,7 @@ end
 # Chrome
 Capybara.register_driver :remote_chrome do |app|
   url = 'http://chrome:4444/wd/hub'
-  capabilities = ::Selenium::WebDriver::Remote::Capabilities.chrome(
+  caps = ::Selenium::WebDriver::Remote::Capabilities.chrome(
     'goog:chromeOptions' => {
       'args' => [
         'no-sandbox',
@@ -27,5 +27,5 @@ Capybara.register_driver :remote_chrome do |app|
       ]
     }
   )
-  Capybara::Selenium::Driver.new(app, browser: :remote, url: url, capabilities: capabilities)
+  Capybara::Selenium::Driver.new(app, browser: :remote, url: url, capabilities: caps)
 end

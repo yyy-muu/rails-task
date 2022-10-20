@@ -24,6 +24,8 @@ services:
     depends_on:
       - chrome
       - db
+    environment:
+      SELENIUM_DRIVER_URL: http://selenium_chrome:4444/wd/hub
     ports:
       - "3000:3000"
     volumes:
