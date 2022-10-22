@@ -10,7 +10,8 @@ services:
     env_file: .env
 
   chrome:
-    image: selenium/standalone-chrome-debug
+    image: selenium/standalone-chrome-debug:latest
+    shm_size: 2gb
     ports:
       - 4444:4444
   web:
