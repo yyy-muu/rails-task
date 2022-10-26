@@ -40,10 +40,10 @@ RSpec.describe 'Users', type: :system do
 
   # ログイン・ログアウトできる
   it 'user can login then logout' do
-    user = FactoryBot.create(:user, email: 'abc@test.com')
+    @user = FactoryBot.create(:user)
     visit new_user_session_path
-    fill_in 'メールアドレス', with: user.email
-    fill_in 'パスワード', with: user.password
+    fill_in 'メールアドレス', with: @user.email
+    fill_in 'パスワード', with: @user.password
     click_on 'ログイン'
     expect(page).to have_content 'ログインしました。'
 

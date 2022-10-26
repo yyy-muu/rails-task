@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Relationship, type: :model do
   let(:user) { FactoryBot.create(:user) }
-  let(:other_user) { FactoryBot.create(:user, email: 'otheruser@test.com') }
+  let(:other_user) { FactoryBot.create(:user) }
 
   describe 'following' do
     # ユーザが他のユーザをフォローできる

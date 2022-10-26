@@ -2,9 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'Comments', type: :system do
   before do
+    @user = FactoryBot.create(:user)
     visit new_user_session_path
-    fill_in 'メールアドレス', with: 'testuser@test.com'
-    fill_in 'パスワード', with: 'testtest'
+    fill_in 'メールアドレス', with: @user.email
+    fill_in 'パスワード', with: @user.password
     click_on 'ログイン'
 
     click_on 'つぶやく'

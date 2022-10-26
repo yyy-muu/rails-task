@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  let(:user) { FactoryBot.create(:user, email: 'testuser3@test.com') }
+  let(:user) { FactoryBot.create(:user) }
   let(:tweet) { FactoryBot.create(:tweet) }
   let(:comment) { FactoryBot.build(:comment, user_id: user.id, tweet_id: tweet.id) }
 

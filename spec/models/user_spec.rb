@@ -26,8 +26,8 @@ RSpec.describe User, type: :model do
 
     # メールアドレスが重複した場合、無効になること
     it 'is invalid when email is dupulicated' do
-      FactoryBot.create(:user)
-      user = FactoryBot.build(:user)
+      FactoryBot.create(:user, email: 'dummy@test.com')
+      user = FactoryBot.build(:user, email: 'dummy@test.com')
       user.valid?
       expect(user.errors[:email]).to include('はすでに存在します')
     end
